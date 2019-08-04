@@ -1,12 +1,11 @@
 .footer-row {
-  min-height: 10%;
-    // position: absolute;
-    // bottom: 0%;
-    // height: 6%;
-    // background: #ffffff;
-    // .footer-logo {
-    //   position: absolute;
-    //   left: 20%;
-    //   top: 20%;
-    // }
+  min-height: 5%;
+  background-color: blue;
+  .footer-row-inner {
+    width: 100%;
+    .footer-icons {
+      color: #ffffff;
+      margin: 12% 50%;
+    }
   }
+}
