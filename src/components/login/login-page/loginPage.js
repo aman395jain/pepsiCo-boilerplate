@@ -58,12 +58,6 @@ class LoginPage extends Component {
           <div className="form_container login-form col-lg-4 col-sm-8 col-10">
             <div className="login-inner-header ">
               <h2 style={{ textAlign: "center" }}>Smart Shelf</h2>
-              {/* <div className="justify-content-between align-items-center Dont-have-an-accoun">
-                <span>Don't have an account?</span>
-                <NavLink to="/signup" className="login-form-inner-links">
-                  Sign Up
-                </NavLink>
-              </div> */}
             </div>
             <div className="facebook-login">
               <button className="btn btn-primary btn-block facebook-login-button">
@@ -142,7 +136,7 @@ class LoginPage extends Component {
                       <div className="justify-content-between align-items-center Dont-have-an-accoun">
                         <span>Don't have an account?</span>
                         <NavLink
-                          to="/signup"
+                          to="/"
                           className="login-form-inner-links"
                         >
                           Sign Up

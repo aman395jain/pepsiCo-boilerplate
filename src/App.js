@@ -8,21 +8,6 @@ import { connect } from "react-redux";
 import { alertActions } from "./actions/alertActions";
 import Footer from "./shared/footer/footer";
 
-/* const Navigation = props => {
-  return (
-    <nav>
-      <ul>
-        <li>
-          <NavLink to="/userManagement">User Management</NavLink>
-        </li>
-        <li>
-          <NavLink to="/signup">Register User</NavLink>
-        </li>
-      </ul>
-    </nav>
-  );
-}; */
-
 class App extends Component {
   constructor(props) {
     super(props);

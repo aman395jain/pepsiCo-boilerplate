@@ -3,8 +3,6 @@ import React, { Component } from "react";
 import "./_header.scss";
 import logo from "../../assets/images/pepsico_Logo.png";
 
-// const pathToExcludeHeader = ["/", "/signup"];
-
 class Header extends Component {
   state = {};
 
