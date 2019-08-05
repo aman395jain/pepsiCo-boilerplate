@@ -12,6 +12,8 @@ import { withRouter } from "react-router-dom";
 import "./_loginPage.scss";
 import * as constant from "../../../assets/constants/constant";
 import { userAuthActions } from "../../../actions/authAcions";
+import facebookLogo from "../../../assets/images/facebook_button.png";
+import googleLogo from "../../../assets/images/google_logo.jpg";
 
 class LoginPage extends Component {
   constructor(props) {
@@ -23,17 +25,7 @@ class LoginPage extends Component {
 
     // reset login status
     this.props.dispatch(userAuthActions.logout());
-
-    // this.showHide = this.showHide.bind(this);
   }
-
-  showHide = e => {
-    this.setState({
-      type: this.state.type === "password" ? "text" : "password"
-    });
-    e.preventDefault();
-    e.stopPropagation();
-  };
 
   handleSubmit(e) {
     e.preventDefault();
@@ -55,26 +47,40 @@ class LoginPage extends Component {
     loginEmail: ["", [Validators.required, Validators.email]],
     loginPassword: ["", [Validators.required, Validators.minLength(8)]]
   });
+
   render() {
     console.log("this.state.type", this.state.type);
     return (
       <div className="container login-bg ">
-        {/* <div className="container" style={{ maxWidth: "100%" }}> */}
         <div className="row login-main">
           <div className="col-lg-4" />
 
-
           <div className="form_container login-form col-lg-4 col-sm-8 col-10">
             <div className="login-inner-header ">
-              <h2>Log in</h2>
-              <div className="justify-content-between align-items-center Dont-have-an-accoun">
+              <h2 style={{ textAlign: "center" }}>Smart Shelf</h2>
+              {/* <div className="justify-content-between align-items-center Dont-have-an-accoun">
                 <span>Don't have an account?</span>
                 <NavLink to="/signup" className="login-form-inner-links">
                   Sign Up
-                  </NavLink>
-              </div>
+                </NavLink>
+              </div> */}
             </div>
-            <div>
+            <div className="facebook-login">
+              <button className="btn btn-primary btn-block facebook-login-button">
+                <img className="facebook-logo" src={facebookLogo} />
+                <span className="facebook-logo-text">Login Using Facebook</span>
+              </button>
+            </div>
+            <div className="google-login">
+              <button className="btn btn-primary btn-block google-login-button">
+                <img className="google-logo" src={googleLogo} />
+                <span className="google-logo-text">Login Using Google</span>
+              </button>
+            </div>
+            <div className="or-option">
+              <span className="or-option-text">OR</span>
+            </div>
+            <div style={{ marginTop: "7%" }}>
               <FieldGroup
                 control={this.loginForm}
                 render={({ invalid }) => (
@@ -87,13 +93,12 @@ class LoginPage extends Component {
                           className="form-group"
                           style={{ position: "relative" }}
                         >
-                          <label>Email address</label>
                           <input
                             type="email"
                             className="form-control"
                             id="exampleInputEmail1"
                             aria-describedby="emailHelp"
-                            placeholder="email address"
+                            placeholder="Username"
                             {...handler()}
                           />
                           <p className="validation-info">
@@ -114,17 +119,12 @@ class LoginPage extends Component {
                           className="form-group"
                           style={{ position: "relative" }}
                         >
-                          <label>Password</label>
                           <input
                             type={this.state.type}
                             className="form-control"
                             id="exampleInputPassword1"
-                            placeholder="********"
+                            placeholder="Password"
                             {...handler()}
-                          />
-                          <span
-                            className="fas fa-eye field-icon"
-                            onClick={this.showHide}
                           />
                           <p className="validation-info">
                             {touched &&
@@ -139,18 +139,15 @@ class LoginPage extends Component {
                       )}
                     />
                     <div className="justify-content-between align-items-center logged-In">
-                      <FieldControl
-                        name="keepLogIn"
-                        className="checkbox-logIn"
-                        render={() => <input type="checkbox" />}
-                      />
-                      <span className="keep-log">Keep me logged in</span>
-                      <NavLink
-                        to="/resetPassword"
-                        className="login-form-forget-links float-right"
-                      >
-                        {constant.login_Form.forget_Password}
-                      </NavLink>
+                      <div className="justify-content-between align-items-center Dont-have-an-accoun">
+                        <span>Don't have an account?</span>
+                        <NavLink
+                          to="/signup"
+                          className="login-form-inner-links"
+                        >
+                          Sign Up
+                        </NavLink>
+                      </div>
                     </div>
 
                     <div className="login-button">
@@ -159,7 +156,7 @@ class LoginPage extends Component {
                         disabled={invalid}
                         className="btn btn-danger btn-block"
                       >
-                        <span className="Sign-in">Sign in</span>
+                        <span className="Sign-in">Login</span>
                       </button>
                     </div>
                   </form>
@@ -167,19 +164,13 @@ class LoginPage extends Component {
               />
             </div>
           </div>
-          <div className="col-lg-4 car-image">
-          </div>
+          <div className="col-lg-4 car-image" />
         </div>
         {/* </div> */}
       </div>
     );
   }
 }
-
-/**
- * will implement proptypes here
- *
- */
 
 //export default loginPage;
 

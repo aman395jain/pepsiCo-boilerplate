@@ -1,6 +1,7 @@
 $colorBlack: #000000;
 $colorWhite: #ffffff;
 $loginRed: #ff0018;
+$loginBlue: #007bff;
 
 .login-form-fonts {
   opacity: 0.9;
@@ -31,7 +32,7 @@ $loginRed: #ff0018;
         display: none;
       }
     }
-  
+
     .login-form {
       padding: 25px;
       margin: auto;
@@ -44,18 +45,48 @@ $loginRed: #ff0018;
           color: #4e4b4b;
         }
       }
-      .Dont-have-an-accoun {
-        @extend .login-form-fonts;
-        font-weight: normal;
-        letter-spacing: 0px;
-        color: #939292;
-        @extend .font-small-devices;
-        .login-form-inner-links {
-          color: #e40110;
-          text-decoration: none;
-          margin-left: 2%;
+      .facebook-login {
+        .facebook-login-button {
+          background-color: #4267b2 !important;
+          border-color: #4267b2 !important;
+          .facebook-logo {
+            float: left;
+            height: auto;
+            width: 12%;
+          }
+          .facebook-logo-text {
+            display: inline-block;
+            vertical-align: middle;
+          }
         }
       }
+      .google-login {
+        margin-top: 5%;
+        .google-login-button {
+          background-color: #e9ebee !important;
+          border-color: #e9ebee !important;
+          .google-logo {
+            float: left;
+            height: auto;
+            width: 12%;
+          }
+          .google-logo-text {
+            display: inline-block;
+            vertical-align: middle;
+            color: #4267b2;
+          }
+        }
+      }
+
+      .or-option {
+        margin-top: 7%;
+        .or-option-text {
+          display: inherit;
+          font-weight: bold;
+          text-align: center;
+        }
+      }
+
       .form-group {
         margin-bottom: 6%;
         label {
@@ -77,6 +108,7 @@ $loginRed: #ff0018;
         z-index: 2;
       }
       .logged-In {
+        margin-top: 10%;
         input {
           border-radius: 3px;
           background-color: #fbfbfb;
@@ -87,13 +119,26 @@ $loginRed: #ff0018;
           color: $colorBlack;
           @extend .font-small-devices;
         }
+        .Dont-have-an-accoun {
+          @extend .login-form-fonts;
+          font-weight: normal;
+          letter-spacing: 0px;
+          color: $loginBlue;
+          @extend .font-small-devices;
+          .login-form-inner-links {
+            color: $loginBlue;
+            text-decoration: none;
+            margin-left: 2%;
+          }
+        }
       }
-  
+
       .login-button {
+        margin-top: 15%;
         button {
-          margin-top: 7%;
-          background-color: $loginRed;
-          border: $loginRed 7px;
+          // margin-top: 7%;
+          background-color: $loginBlue;
+          border: $loginBlue 7px;
         }
         .Sign-in {
           @extend .login-form-fonts;
@@ -112,6 +157,3 @@ $loginRed: #ff0018;
     }
   }
 }
-
-
-
