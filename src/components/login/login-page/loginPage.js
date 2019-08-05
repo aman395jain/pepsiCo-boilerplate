@@ -104,9 +104,9 @@ class LoginPage extends Component {
                           <p className="validation-info">
                             {touched &&
                               ((hasError("required") &&
-                                constant.email_Validations.email_Required) ||
+                                constant.userName_Validations.userName_Required) ||
                                 (hasError("email") &&
-                                  constant.email_Validations.valid_Email))}
+                                  constant.userName_Validations.valid_userName))}
                           </p>
                         </div>
                       )}

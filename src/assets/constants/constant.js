@@ -14,6 +14,11 @@ export const password_Validations = {
   valid_Password: "Password is not upto min length"
 };
 
+export const userName_Validations = {
+  userName_Required: "Username is required",
+  valid_userName: "Please enter a valid Username"
+};
+
 export const reset_Password_Form = {
   reset_Password: "Reset Password",
   reset_Password_text: "Enter your email address to reset your password."
