@@ -1,6 +1,13 @@
 .top-header {
   min-height: 10%;
   border-bottom: 1px solid #adb5bd;
+  margin-right: 0px !important;
+  margin-left: 0px !important;
+
+  .logo-image {
+    width: 100%;
+    height: 50px;
+  }
   .searchBox {
     border-radius: 30px;
     width: 250px;
@@ -10,12 +17,13 @@
     line-height: 1;
     p {
       margin: 0;
-      font-size: 15px;
+      font-size: 12px;
     }
     span {
       font-size: 13px;
       color: #b5b5b5;
       float: right;
+      font-style: italic;
     }
   }
   .far {
@@ -24,16 +32,16 @@
   }
   .badge {
     position: absolute;
-    background: #117e96;
-    border: 1px solid black;
+    background: #d05980;
+    border: 1px solid #d05980;
     border-radius: 100%;
-    top: -7px;
+    top: 0px;
     min-width: 14px;
     text-align: center;
     font-size: 10px;
     line-height: 7px;
     color: #fff;
-    right: -6px;
+    right: -4px;
     min-height: 14px;
   }
   .dropdown-toggle {

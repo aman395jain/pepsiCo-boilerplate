@@ -10,25 +10,20 @@ class Header extends Component {
 
   renderHdrRight() {
     console.log("in the header",this.props.isAuthorized )
-    if (this.props.isAuthorized) {
+    // if (this.props.isAuthorized) {
     return (
-      <div className="col-sm-8">
+      <div className="col-8 col-md-8 col-sm-8 col-xs-8">
         <div className="d-flex align-items-center justify-content-end">
-          {/* <input
-            type="text"
-            className="form-control searchBox"
-            placeholder="search"
-          /> */}
-          <i className="far fa-bell ml-4">
+          <i className="far fa-bell ml-4 mr-4">
             <span className="badge">9</span>
           </i>
-          <i className="far fa-envelope icon-envelope ml-4 mr-4">
+          {/* <i className="far fa-envelope icon-envelope ml-4 mr-4">
             <span className="badge">1</span>
-          </i>
+          </i> */}
           <div className="d-flex">
             <div className="user-name mr-2">
-              <p>Peter Parker</p>
-              <span>Super admin</span>
+              <p>Peter Handscomb</p>
+              <span>Manager</span>
             </div>
             <img
               className="rounded-circle dropdown-toggle"
@@ -55,7 +50,7 @@ class Header extends Component {
         </div>
       </div>
     );
-    }
+    // }
   }
   render() {
     // console.log(
@@ -65,8 +60,8 @@ class Header extends Component {
     // if (pathToExcludeHeader.indexOf(window.location.pathname) >= 0) return null;
     return (
       <header className="row align-items-center top-header">
-        <div className="col-sm-4">
-          <img src={logo} alt="pepsico logo" />
+        <div className="col-4 col-md-4 col-sm-4 col-xs-4">
+          <img src={logo} className ="logo-image" width= "100%" alt="pepsico logo" />
         </div>
         {this.renderHdrRight()}
       </header>

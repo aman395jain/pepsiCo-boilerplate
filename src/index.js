@@ -3,7 +3,7 @@ import "../src/assets/js/polyfills";
 import "./index.scss";
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Router } from "react-router-dom";
+import { Router } from "react-router-dom";
 import { Provider } from "react-redux";
 import * as serviceWorker from "./serviceWorker";
 
