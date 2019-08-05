@@ -27,6 +27,11 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = { isLogin: false };
+    if (window.location.pathname === "/") {
+      this.state = { isLogin: false };
+    } else {
+      this.state = { isLogin: true };
+    }
     const { dispatch } = this.props;
     history.listen((location, action) => {
       console.log("APP releoaded with location", location);
@@ -39,12 +44,12 @@ class App extends Component {
     return (
       <React.Fragment>
         {/* <div className="container"> */}
-          <Header isAuthorized={this.state.isLogin} />
+        <Header isAuthorized={this.state.isLogin} />
         {/* </div> */}
         {/* <Navigation /> */}
         <Router />
         {/* <div className="container"> */}
-          <Footer isAuthorized={this.state.isLogin} />
+        <Footer isAuthorized={this.state.isLogin} />
         {/* </div> */}
       </React.Fragment>
     );

@@ -60,115 +60,116 @@ class LoginPage extends Component {
     return (
       <div className="container login-bg ">
         {/* <div className="container" style={{ maxWidth: "100%" }}> */}
-          <div className="row login-main">
-            <div className="col-lg-4" />
-            <div className="col-lg-4 car-image">
-            </div>
+        <div className="row login-main">
+          <div className="col-lg-4" />
 
-            <div className="form_container login-form col-lg-4 col-sm-8 col-10">
-              <div className="login-inner-header ">
-                <h2>Log in</h2>
-                <div className="justify-content-between align-items-center Dont-have-an-accoun">
-                  <span>Don't have an account?</span>
-                  <NavLink to="/signup" className="login-form-inner-links">
-                    Sign Up
+
+          <div className="form_container login-form col-lg-4 col-sm-8 col-10">
+            <div className="login-inner-header ">
+              <h2>Log in</h2>
+              <div className="justify-content-between align-items-center Dont-have-an-accoun">
+                <span>Don't have an account?</span>
+                <NavLink to="/signup" className="login-form-inner-links">
+                  Sign Up
                   </NavLink>
-                </div>
               </div>
-              <div>
-                <FieldGroup
-                  control={this.loginForm}
-                  render={({ invalid }) => (
-                    <form onSubmit={e => this.handleSubmit(e)}>
-                      <FieldControl
-                        name="loginEmail"
-                        options={{ validators: Validators.required }}
-                        render={({ handler, touched, hasError }) => (
-                          <div
-                            className="form-group"
-                            style={{ position: "relative" }}
-                          >
-                            <label>Email address</label>
-                            <input
-                              type="email"
-                              className="form-control"
-                              id="exampleInputEmail1"
-                              aria-describedby="emailHelp"
-                              placeholder="email address"
-                              {...handler()}
-                            />
-                            <p className="validation-info">
-                              {touched &&
-                                ((hasError("required") &&
-                                  constant.email_Validations.email_Required) ||
-                                  (hasError("email") &&
-                                    constant.email_Validations.valid_Email))}
-                            </p>
-                          </div>
-                        )}
-                      />
-                      <FieldControl
-                        name="loginPassword"
-                        options={{ validators: Validators.required }}
-                        render={({ handler, touched, hasError }) => (
-                          <div
-                            className="form-group"
-                            style={{ position: "relative" }}
-                          >
-                            <label>Password</label>
-                            <input
-                              type={this.state.type}
-                              className="form-control"
-                              id="exampleInputPassword1"
-                              placeholder="********"
-                              {...handler()}
-                            />
-                            <span
-                              className="fas fa-eye field-icon"
-                              onClick={this.showHide}
-                            />
-                            <p className="validation-info">
-                              {touched &&
-                                ((hasError("required") &&
+            </div>
+            <div>
+              <FieldGroup
+                control={this.loginForm}
+                render={({ invalid }) => (
+                  <form onSubmit={e => this.handleSubmit(e)}>
+                    <FieldControl
+                      name="loginEmail"
+                      options={{ validators: Validators.required }}
+                      render={({ handler, touched, hasError }) => (
+                        <div
+                          className="form-group"
+                          style={{ position: "relative" }}
+                        >
+                          <label>Email address</label>
+                          <input
+                            type="email"
+                            className="form-control"
+                            id="exampleInputEmail1"
+                            aria-describedby="emailHelp"
+                            placeholder="email address"
+                            {...handler()}
+                          />
+                          <p className="validation-info">
+                            {touched &&
+                              ((hasError("required") &&
+                                constant.email_Validations.email_Required) ||
+                                (hasError("email") &&
+                                  constant.email_Validations.valid_Email))}
+                          </p>
+                        </div>
+                      )}
+                    />
+                    <FieldControl
+                      name="loginPassword"
+                      options={{ validators: Validators.required }}
+                      render={({ handler, touched, hasError }) => (
+                        <div
+                          className="form-group"
+                          style={{ position: "relative" }}
+                        >
+                          <label>Password</label>
+                          <input
+                            type={this.state.type}
+                            className="form-control"
+                            id="exampleInputPassword1"
+                            placeholder="********"
+                            {...handler()}
+                          />
+                          <span
+                            className="fas fa-eye field-icon"
+                            onClick={this.showHide}
+                          />
+                          <p className="validation-info">
+                            {touched &&
+                              ((hasError("required") &&
+                                constant.password_Validations
+                                  .password_Required) ||
+                                (hasError("minLength") &&
                                   constant.password_Validations
-                                    .password_Required) ||
-                                  (hasError("minLength") &&
-                                    constant.password_Validations
-                                      .valid_Password))}
-                            </p>
-                          </div>
-                        )}
+                                    .valid_Password))}
+                          </p>
+                        </div>
+                      )}
+                    />
+                    <div className="justify-content-between align-items-center logged-In">
+                      <FieldControl
+                        name="keepLogIn"
+                        className="checkbox-logIn"
+                        render={() => <input type="checkbox" />}
                       />
-                      <div className="justify-content-between align-items-center logged-In">
-                        <FieldControl
-                          name="keepLogIn"
-                          className="checkbox-logIn"
-                          render={() => <input type="checkbox" />}
-                        />
-                        <span className="keep-log">Keep me logged in</span>
-                        <NavLink
-                          to="/resetPassword"
-                          className="login-form-forget-links float-right"
-                        >
-                          {constant.login_Form.forget_Password}
-                        </NavLink>
-                      </div>
+                      <span className="keep-log">Keep me logged in</span>
+                      <NavLink
+                        to="/resetPassword"
+                        className="login-form-forget-links float-right"
+                      >
+                        {constant.login_Form.forget_Password}
+                      </NavLink>
+                    </div>
 
-                      <div className="login-button">
-                        <button
-                          type="submit"
-                          disabled={invalid}
-                          className="btn btn-danger btn-block"
-                        >
-                          <span className="Sign-in">Sign in</span>
-                        </button>
-                      </div>
-                    </form>
-                  )}
-                />
-              </div>
+                    <div className="login-button">
+                      <button
+                        type="submit"
+                        disabled={invalid}
+                        className="btn btn-danger btn-block"
+                      >
+                        <span className="Sign-in">Sign in</span>
+                      </button>
+                    </div>
+                  </form>
+                )}
+              />
             </div>
           </div>
+          <div className="col-lg-4 car-image">
+          </div>
+        </div>
         {/* </div> */}
       </div>
     );
