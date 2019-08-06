@@ -16,15 +16,15 @@ class Footer extends Component {
 
             <div className="col-3 col-md-3 col-sm-3 col-xs-3">
               <i className="fa fa-cubes footer-icons" aria-hidden="true" >
-                <span className="footer-text">Products</span>
+                <span className="footer-text">Racks</span>
               </i>
             </div>
             <div className="col-3 col-md-3 col-sm-3 col-xs-3">
-              <i className="fa fa-gift footer-icons" aria-hidden="true" ><span className="footer-text">Order</span>
+              <i className="fa fa-qrcode footer-icons" aria-hidden="true" ><span className="footer-text">QrScan</span>
               </i>
             </div>
             <div className="col-3 col-md-3 col-sm-3 col-xs-3">
-              <i className="fa fa-industry footer-icons" aria-hidden="true" ><span className="footer-text">Analytics</span>
+              <i className="fa fa-shopping-cart footer-icons" aria-hidden="true" ><span className="footer-text">Cart</span>
               </i>
             </div>
           </div>

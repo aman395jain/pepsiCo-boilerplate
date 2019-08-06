@@ -1,6 +1,6 @@
 .footer-row {
   min-height: 5%;
-  background-color: black;
+  background-color: #1c2224;
   position: fixed;
   left: 0;
   bottom: 0;
@@ -8,7 +8,7 @@
   .footer-row-inner {
     width: 100%;
     .footer-icons {
-      color: #939292;
+      color: #ffffff80;
       margin: 12% 50%;
     }
     .fa {
@@ -18,11 +18,11 @@
     }
     .footer-text {
       float: right;
-      font-size: 10px;  
+      font-size: 13px;
       font-weight: normal;
       letter-spacing: 0px;
-      color: #939292;
-      font-family: monospace;
+      color: #ffffff80;
+      font-family: sans-serif;
     }
   }
 }
