@@ -1,4 +1,4 @@
-import { alertConstants } from "../constants/constants";
+import { alertConstants } from "../assets/constants/store-constants";
 
 export function alert(state = {}, action) {
   switch (action.type) {

@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 
-import { LoginPage } from "./components/login/login-page/loginPage";
+import { LoginPage } from "./components/login/loginPage";
 import ManagerDashboard from "./components/managerDashboard/managerDashboard";
 // import { PrivateRoute } from "./containers/PrivateRoute";
 import { PageNotFound } from "./shared/error/PageNotFound";

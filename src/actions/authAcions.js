@@ -1,4 +1,4 @@
-import { userConstants } from "../constants/constants";
+import { userConstants } from "../assets/constants/store-constants";
 import { authService } from "../services/authService";
 import { alertActions } from "./alertActions";
 import { history } from "../helpers/history";

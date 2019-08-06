@@ -11,7 +11,7 @@
 //       return state;
 //   }
 // }
-import { userConstants } from "../constants/constants";
+import { userConstants } from "../assets/constants/store-constants";
 
 let user = JSON.parse(localStorage.getItem("user"));
 const initialState = user ? { loggedIn: true, user } : {};
