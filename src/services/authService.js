@@ -36,7 +36,7 @@ export const authService = {
       )
       .then(response => {
         console.log("in the auth service>>>>>>>", response);
-        localStorage.setItem("example-jwt-jwt", response.authorization);
+        localStorage.setItem("user-jwt", response.authorization);
       })
       .catch(error => {
         console.log("auth service error", error);

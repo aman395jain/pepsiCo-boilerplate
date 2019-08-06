@@ -8,7 +8,8 @@
   height: calc(100% - 15%);
   .list-rack-header {
     .list-rack-header-content {
-      font-weight: bold;
+      // font-weight: bold;
+      font-size: 22px;
     }
   }
   .rack-content {
@@ -23,20 +24,28 @@
       padding: 3% 0;
       .rack-image {
         height: 100%;
-        width: 50px;
+        width: 90%;
       }
       .rack-location {
         text-align: center;
         justify-content: center;
-        padding: 5% 0;
+        display: flex;
+        align-items: center;
         .rack-location-content {
-          font-size: 14px;
-          color: blue;
+          // font-size: 14px;
+          color: #333;
+          font-weight: 500;
         }
       }
-      .order-button {
-        border-radius: 50%;
-        margin: 50%;
+
+      .rack-to-description {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        .order-button {
+          border-radius: 50%;
+          // margin: 50%;
+        }
       }
     }
   }

@@ -30,7 +30,7 @@ class ManagerDashboard extends Component {
         <div className="row">
           <div className="col-12 col-md-12 col-sm-12 col-xs-12 list-rack-header">
             <span className="list-rack-header-content">
-              List of Associated Racks
+              Associated Racks
             </span>
           </div>
         </div>
@@ -42,7 +42,7 @@ class ManagerDashboard extends Component {
                 className="col-12 col-md-12 col-sm-12 col-xs-12 d-flex float-right rack-content"
               >
                 <div className="row rack-tiles">
-                  <div className="col-3 col-md-3 col-sm-3 col-xs-3">
+                  <div className="col-4 col-md-4 col-sm-4 col-xs-4">
                     <img
                       src={rackImage}
                       className="rack-image"
@@ -54,8 +54,10 @@ class ManagerDashboard extends Component {
                       {data.rackLocation}
                     </span>
                   </div>
-                  <div className="col-3 col-md-3 col-sm-3 col-xs-3">
-                    <button className="btn btn-primary order-button" />
+                  <div className="col-2 col-md-2 col-sm-2 col-xs-2 rack-to-description">
+                    <div className="order-button-head">
+                      <button className="btn btn-primary order-button" />
+                    </div>
                   </div>
                 </div>
               </div>
