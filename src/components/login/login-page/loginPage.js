@@ -9,6 +9,7 @@ import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 
+import {authService} from "../../../services/authService"
 import "./_loginPage.scss";
 import * as constant from "../../../assets/constants/constant";
 import { userAuthActions } from "../../../actions/authAcions";
@@ -29,18 +30,22 @@ class LoginPage extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log("submit form >>", this.loginForm);
+    console.log("submit form >>", this.loginForm.value);
     this.setState({ submitted: true });
-    //const { username, password } = this.state;
-    const { dispatch } = this.props;
-    if (this.loginForm.value) {
-      dispatch(
-        userAuthActions.login(
-          this.loginForm.value.loginEmail,
-          this.loginForm.value.loginPassword
-        )
-      );
+    if(this.loginForm.value) {
+      // this.props.history.push('/managerDashboard')
+      authService.login(this.loginForm.value)
     }
+    //const { username, password } = this.state;
+    // const { dispatch } = this.props;
+    // if (this.loginForm.value) {
+    //   dispatch(
+    //     userAuthActions.login(
+    //       this.loginForm.value.loginEmail,
+    //       this.loginForm.value.loginPassword
+    //     )
+    //   );
+    // }
   }
 
   loginForm = FormBuilder.group({

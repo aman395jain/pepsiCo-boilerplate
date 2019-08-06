@@ -1,21 +1,26 @@
 .manager-dashboard {
   overflow-y: auto;
-  margin-top: 5%;
+  // margin-top: 5%;
   // min-height: 82%;
+  padding-top: 5%;
+  background-color: #ccc;
+  padding-bottom: 5%;
+  height: calc(100% - 15%);
   .list-rack-header {
     .list-rack-header-content {
       font-weight: bold;
     }
   }
   .rack-content {
-    background-color: #ccc;
-    border-radius: 10px;
+    background-color: #ffffff;
+    // border-radius: 10px;
     // height: 50px;
-    box-shadow: 1px 1px 1px 3px #ccc;
-    margin: 2% 0;
+    // box-shadow: 1px 1px 1px 3px #ffffff;
+    margin: 1% 0;
 
     .rack-tiles {
       width: 100%;
+      padding: 3% 0;
       .rack-image {
         height: 100%;
         width: 50px;
@@ -25,7 +30,7 @@
         justify-content: center;
         padding: 3% 0;
         .rack-location-content {
-          font-size: 12px;
+          font-size: 14px;
           color: blue;
         }
       }
