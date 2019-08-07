@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom"
+import classnames from 'classnames';
 
 import "./managerDashboard.scss";
 // import rackImage from "../../assets/images/Rack_Image.png";
-import rackImage from "../../assets/images/vending-machine.svg";
+import rackImage from "../../assets/images/vending.jpg";
 import { rackData } from "../../assets/constants/_mockRackData";
 import Header from "../../shared/header/header"
 import Footer from "../../shared/footer/footer"
@@ -15,6 +16,7 @@ class ManagerDashboard extends Component {
     openDiv: false,
     isLogin: true,
     arrowClass: "fa fa-angle-down",
+    isActive: false
   }
 
   /* constructor(props) {
@@ -41,6 +43,7 @@ class ManagerDashboard extends Component {
     } else {
       this.setState({ arrowClass: "fa fa-angle-down" })
     }
+    this.setState({ isActive: !this.state.isActive })
 
   }
 
@@ -52,20 +55,23 @@ class ManagerDashboard extends Component {
           <div className="manager-dashboard">
             {this._rackData.map((data, index) => {
               return (
-                <div key={index}>
+                <div key={index} className={classnames("media-wrapper", { 'active': this.state.isActive })}>
                   <div className="media rack-content">
                     <Link to="/dashbardDescription"><img src={rackImage} className="mr-3 thumb-img" alt="..." /></Link>
                     <div className="media-body">
-                      <Link to="/dashbardDescription">
-                        <span className="rack-location-content">
-                          {data.name} , {data.locationName}
-                        </span>
-                      </Link>
-                      <i className={`${this.state.arrowClass} icon-pos`} data-toggle="collapse" href={`#collapseId${index}`} onClick={this.changeIcon}></i>
+                      <div className="content-center">
+                        <Link to="/dashbardDescription">
+                          <strong>{data.name}</strong>
+                          <p>{data.locationName}</p>
+                          <p>{data.currentMode}</p>
+
+                        </Link>
+                        <i className={`${this.state.arrowClass} icon-pos`} data-toggle="collapse" href={`#collapseId${index}`} onClick={this.changeIcon}></i>
+                      </div>
                     </div>
                   </div>
-                  <div className="collapse" id={`collapseId${index}`}>
-                    <div className="card card-body">
+                  <div className="collapse media-details-collapse" id={`collapseId${index}`}>
+                    <div className="">
                       <p>Store ID: {data.store.id}</p>
                       <p>Store Name :{data.store.name}</p>
                       <p>Quantities in Stock : {data.store.quantityInStocks}</p>

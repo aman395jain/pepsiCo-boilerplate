@@ -1,16 +1,13 @@
 .top-header {
-  height: 10%;
-  border-bottom: 2px solid #adb5bd;
-  margin-right: 0px !important;
-  margin-left: 0px !important;
+  height: 55px;
+  border-top: 1px solid #c4c8ca;
   z-index: 1000;
   position: fixed;
-  background: #fff;
+  background: #000;
   width: 100%;
-
-  .logo-image {
-    width: 100%;
-    height: 50px;
+  padding: 0 10px;
+  .fa-bell {
+    color: #fff;
   }
   .searchBox {
     border-radius: 30px;
@@ -36,8 +33,7 @@
   }
   .badge {
     position: absolute;
-    background: #d05980;
-    border: 1px solid #d05980;
+    background: #f3300f;
     border-radius: 100%;
     top: 0px;
     min-width: 14px;
