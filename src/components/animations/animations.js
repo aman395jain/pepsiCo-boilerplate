@@ -5,10 +5,6 @@ import { headShake } from "react-animations";
 const HeadShake = styled.div`animation: 2s ${keyframes`${headShake}`} infinite`
 
 export default class Animations extends Component {
-  constructor(props) {
-    super(props);
-  }
-
 
   render() {
     return (

@@ -28,14 +28,9 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        {/* <div className="container"> */}
         <Header isAuthorized={this.state.isLogin} />
-        {/* </div> */}
-        {/* <Navigation /> */}
         <Router />
-        {/* <div className="container"> */}
         <Footer isAuthorized={this.state.isLogin} />
-        {/* </div> */}
       </React.Fragment>
     );
   }

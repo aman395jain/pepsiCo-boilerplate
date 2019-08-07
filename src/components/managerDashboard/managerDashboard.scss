@@ -1,52 +1,19 @@
 .manager-dashboard {
   overflow-y: auto;
-  // margin-top: 5%;
-  // min-height: 82%;
-  padding-top: 5%;
   background-color: #e8e5e5;
-  padding-bottom: 5%;
-  height: calc(100% - 17%);
-  .list-rack-header {
-    .list-rack-header-content {
-      // font-weight: bold;
-      font-size: 22px;
-    }
-  }
+  padding-bottom: 15%;
   .rack-content {
     background-color: #ffffff;
-    // border-radius: 10px;
-    // height: 50px;
-    // box-shadow: 1px 1px 1px 3px #ffffff;
-    margin: 1% 0;
-
-    .rack-tiles {
-      width: 100%;
-      padding: 3% 0;
-      .rack-image {
-        height: 100%;
-        width: 90%;
-      }
-      .rack-location {
-        text-align: center;
-        justify-content: center;
-        display: flex;
-        align-items: center;
-        .rack-location-content {
-          // font-size: 14px;
-          color: #333;
-          font-weight: 500;
-        }
-      }
-
-      .rack-to-description {
-        height: 100%;
-        display: flex;
-        align-items: center;
-        .order-button {
-          border-radius: 50%;
-          // margin: 50%;
-        }
-      }
+    padding: 5% 0;
+    border-bottom: 2px solid #e0e0e0;
+    .rack-image {
+      height: 100%;
+      width: 110%;
+    }
+    .rack-location {
+      display: flex;
+      align-items: center;
+      font-size: 18px;
     }
   }
 }
