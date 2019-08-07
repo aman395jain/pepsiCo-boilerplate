@@ -3,6 +3,10 @@
   border-bottom: 2px solid #adb5bd;
   margin-right: 0px !important;
   margin-left: 0px !important;
+  z-index: 1000;
+  position: fixed;
+  background: #fff;
+  width: 100%;
 
   .logo-image {
     width: 100%;

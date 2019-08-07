@@ -66,16 +66,9 @@ class ManagerDashboard extends Component {
                   </div>
                   <div className="collapse" id={`collapseId${index}`}>
                     <div className="card card-body">
-                      <p>this is test paragraph this is test paragraphthis is test paragraphthis is
-                         test paragraphthis is test paragraphthis is test paragraph</p>
-                      <img
-                        src={rackImage}
-                        className="rack-image"
-                        alt="Rack"
-                      />
-                      <p>this is test paragraph</p>
-                      <p>this is test paragraph</p>
-                      <p>this is test paragraph</p>
+                      <p>Store ID: {data.store.id}</p>
+                      <p>Store Name :{data.store.name}</p>
+                      <p>Quantities in Stock : {data.store.quantityInStocks}</p>
                     </div>
                   </div>
                 </div>
