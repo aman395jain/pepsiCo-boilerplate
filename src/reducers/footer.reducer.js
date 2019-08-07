@@ -1,10 +1,10 @@
 import { footerConstants } from '../assets/constants/index';
 
 export function footer(state = {}, action) {
-    console.log(action.val)
+    console.log("cdvhhdjhvv========",action.param)
     switch (action.type) {
         case footerConstants.FOOTER_REQUEST:
-            return { param_value: action.val };
+            return { param_value: action.param };
         default:
             return state
     }

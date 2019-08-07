@@ -17,7 +17,7 @@ export const authService = {
     //   localStorage.setItem("user", JSON.stringify(user));
     //   resolve(user);
     // });
-    console.log("in the auth service", loginFormData);
+    // console.log("in the auth service", loginFormData);
     let axiosConfig = {
       headers: {
         "Content-Type": "application/json",

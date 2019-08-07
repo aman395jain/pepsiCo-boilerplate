@@ -7,7 +7,7 @@ class Header extends Component {
   state = {};
 
   renderHdrRight() {
-    console.log("in the header", this.props.isAuthorized)
+    // console.log("in the header", this.props.isAuthorized)
     if (this.props.isAuthorized) {
       return (
         <div className="col-8 col-md-8 col-sm-8 col-xs-8">
@@ -39,6 +39,7 @@ class Header extends Component {
     //   pathToExcludeHeader.indexOf(window.location.pathname)
     // );
     // if (pathToExcludeHeader.indexOf(window.location.pathname) >= 0) return null;
+    // console.log("in the header", this.props)
     return (
       <header className="row align-items-center top-header">
         <div className="col-4 col-md-4 col-sm-4 col-xs-4">
@@ -49,5 +50,8 @@ class Header extends Component {
     );
   }
 }
+
+
+
 
 export default Header;

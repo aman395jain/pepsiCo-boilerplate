@@ -19,7 +19,7 @@ class App extends Component {
     }
     const { dispatch } = this.props;
     history.listen((location, action) => {
-      console.log("APP releoaded with location", location);
+      // console.log("APP releoaded with location", location);
 
       // clear alert on location change
       dispatch(alertActions.clear());
@@ -28,9 +28,9 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <Header isAuthorized={this.state.isLogin} />
+        
         <Router />
-        <Footer isAuthorized={this.state.isLogin} />
+        
       </React.Fragment>
     );
   }

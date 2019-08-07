@@ -19,7 +19,7 @@ function login(username, password) {
       user => {
         console.log("login action called >>");
         dispatch(success(user));
-        history.push("/HomePage");
+        
       },
       error => {
         dispatch(failure(error));

@@ -17,13 +17,16 @@ import * as constant from "../../assets/constants/validations-constant";
 import { userAuthActions, footerActions } from "../../actions/index"
 import facebookLogo from "../../assets/images/facebook_button.png";
 import googleLogo from "../../assets/images/google_logo.jpg";
+import Header from "../../shared/header/header"
+import Footer from "../../shared/footer/footer"
 
 class LoginPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
       type: "password",
-      submitted: false
+      submitted: false,
+      isLogin: false
     };
 
     // reset login status
@@ -38,17 +41,21 @@ class LoginPage extends Component {
     if (this.loginForm.value) {
       // this.props.history.push('/managerDashboard')
       // authService.login(this.loginForm.value);
+      localStorage.setItem("user", this.loginForm.value)
       this.props.passParam("RACKS")
+      this.props.userLoginStatus(
+        userAuthActions.login(
+          this.loginForm.value.loginEmail,
+          this.loginForm.value.loginPassword
+        )
+      );
+      this.props.history.push('/managerDashboard')
+      
     }
     //const { username, password } = this.state;
     // const { dispatch } = this.props;
     // if (this.loginForm.value) {
-    //   dispatch(
-    //     userAuthActions.login(
-    //       this.loginForm.value.loginEmail,
-    //       this.loginForm.value.loginPassword
-    //     )
-    //   );
+      
     // }
   }
 
@@ -60,6 +67,8 @@ class LoginPage extends Component {
   render() {
     //console.log("this.state.type", this.state.type);
     return (
+      <div>
+      <Header isAuthorized={this.state.isLogin} />
       <div className="container login-bg ">
         <div className="row login-main">
           <div className="col-lg-4" />
@@ -169,6 +178,8 @@ class LoginPage extends Component {
           <div className="col-lg-4 car-image" />
         </div>
       </div>
+      <Footer isAuthorized={this.state.isLogin} />
+      </div>
     );
   }
 }
@@ -193,7 +204,8 @@ function mapStateToProps(state) {
 // }
 
 const actionCreators = {
-  passParam: footerActions.getFooterParam
+  passParam: footerActions.getFooterParam,
+  userLoginStatus: userAuthActions.login
 };
 
 const connectedLoginPage = connect(

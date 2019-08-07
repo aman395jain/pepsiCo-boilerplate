@@ -4,30 +4,24 @@ import { Link } from "react-router-dom"
 import "./managerDashboard.scss";
 // import rackImage from "../../assets/images/Rack_Image.png";
 import rackImage from "../../assets/images/vending-machine.svg";
+import {rackData } from "../../assets/constants/_mockRackData";
+import Header from "../../shared/header/header"
+import Footer from "../../shared/footer/footer"
 
 class ManagerDashboard extends Component {
-  testArray = [1, 2, 3, 4];
+  _rackData = [];
 
   state = {
-    openDiv: false
+    openDiv: false,
+    isLogin: true
   }
 
-  testObject = [
-    { rackLocation: "Tower 1, 1st floor, Cola 1 Pepsi Way Somers" },
-    { rackLocation: "Tower 1, 3st floor, Cola 1 Pepsi Way Somers" },
-    { rackLocation: "Tower 3, 1st floor, Cola 1 Pepsi Way Somers" },
-    { rackLocation: "Tower 3, 3st floor, Cola 1 Pepsi Way Somers" },
-    { rackLocation: "Tower 1, 1st floor, Cola 1 Pepsi Way Somers" },
-    { rackLocation: "Tower 1, 3st floor, Cola 1 Pepsi Way Somers" },
-    { rackLocation: "Tower 3, 1st floor, Cola 1 Pepsi Way Somers" },
-    { rackLocation: "Tower 3, 3st floor, Cola 1 Pepsi Way Somers" },
-    { rackLocation: "Tower 1, 1st floor, Cola 1 Pepsi Way Somers" },
-    { rackLocation: "Tower 1, 3st floor, Cola 1 Pepsi Way Somers" },
-    { rackLocation: "Tower 3, 1st floor, Cola 1 Pepsi Way Somers" },
-    { rackLocation: "Tower 3, 3st floor, Cola 1 Pepsi Way Somers" }
-  ];
   constructor(props) {
     super(props);
+    
+  }
+  componentWillMount() {
+    this._rackData = rackData;
   }
 
   displayDivData = () => {
@@ -42,14 +36,20 @@ class ManagerDashboard extends Component {
   render() {
     return (
       <React.Fragment>
+        <div>
+      <Header isAuthorized={this.state.isLogin} />
         <div className="manager-dashboard">
-          {this.testObject.map((data, index) => {
+          {this._rackData.map((data, index) => {
             return (
               <div key={index}>
                 <div className="media rack-content">
                   <Link to="/dashbardDescription"><img src={rackImage} className="mr-3 thumb-img" alt="..." /></Link>
                   <div className="media-body">
-                    <Link to="/dashbardDescription">{data.rackLocation}</Link>
+                    <Link to="/dashbardDescription">
+                      <span className="rack-location-content">
+                  {data.name} , {data.locationName}
+                </span>
+                </Link>
                     <i className="fa fa-angle-down icon-pos" data-toggle="collapse" href={`#collapseId${index}`}></i>
                   </div>
                 </div>
@@ -72,6 +72,8 @@ class ManagerDashboard extends Component {
           })}
 
         </div>
+      <Footer isAuthorized={this.state.isLogin} />
+      </div>
       </React.Fragment >
     );
   }
