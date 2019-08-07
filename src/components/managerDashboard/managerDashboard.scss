@@ -6,14 +6,23 @@
     background-color: #ffffff;
     padding: 5% 0;
     border-bottom: 2px solid #e0e0e0;
-    .rack-image {
-      height: 100%;
-      width: 110%;
+    .thumb-img {
+      width: 100px;
     }
-    .rack-location {
-      display: flex;
-      align-items: center;
-      font-size: 18px;
-    }
+    .media-body {
+      position: relative;
+      padding-right: 9%;
+      padding-top: 6%;
+      .icon-pos {
+        position: absolute;
+        top: 75%;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        right: 5%;
+      }
+      a {
+        color : inherit;
+      }
+    }   
   }
 }
