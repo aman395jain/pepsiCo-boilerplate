@@ -13,7 +13,8 @@ class ManagerDashboard extends Component {
 
   state = {
     openDiv: false,
-    isLogin: true
+    isLogin: true,
+    arrowClass: "fa fa-angle-down",
   }
 
   /* constructor(props) {
@@ -33,6 +34,16 @@ class ManagerDashboard extends Component {
     }
   }
 
+  changeIcon = () => {
+    console.log("changeIcon changeIcon");
+    if (this.state.arrowClass === "fa fa-angle-down") {
+      this.setState({ arrowClass: "fa fa-angle-up" })
+    } else {
+      this.setState({ arrowClass: "fa fa-angle-down" })
+    }
+
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -50,7 +61,7 @@ class ManagerDashboard extends Component {
                           {data.name} , {data.locationName}
                         </span>
                       </Link>
-                      <i className="fa fa-angle-down icon-pos" data-toggle="collapse" href={`#collapseId${index}`}></i>
+                      <i className={`${this.state.arrowClass} icon-pos`} data-toggle="collapse" href={`#collapseId${index}`} onClick={this.changeIcon}></i>
                     </div>
                   </div>
                   <div className="collapse" id={`collapseId${index}`}>
