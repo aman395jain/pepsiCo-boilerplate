@@ -12,7 +12,7 @@ class Header extends Component {
       return (
         <div className="col-8 col-md-8 col-sm-8 col-xs-8">
           <div className="d-flex align-items-center justify-content-end">
-            <i className="far fa-bell ml-4 mr-4">
+            <i className="far fa-bell ml-4 mr-2">
               <span className="badge">9</span>
             </i>
             {/* <i className="far fa-envelope icon-envelope ml-4 mr-4">
