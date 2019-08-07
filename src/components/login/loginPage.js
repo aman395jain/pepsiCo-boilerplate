@@ -14,7 +14,7 @@ import "./_loginPage.scss";
 import * as constant from "../../assets/constants/validations-constant";
 // import { userAuthActions } from "../../actions/authAcions";
 // import { footerStatusAction } from "../../actions/footerStatusAction";
-import { userAuthActions, footerActions} from "../../actions/index"
+import { userAuthActions, footerActions } from "../../actions/index"
 import facebookLogo from "../../assets/images/facebook_button.png";
 import googleLogo from "../../assets/images/google_logo.jpg";
 
@@ -168,7 +168,6 @@ class LoginPage extends Component {
           </div>
           <div className="col-lg-4 car-image" />
         </div>
-        {/* </div> */}
       </div>
     );
   }
@@ -185,7 +184,7 @@ function mapStateToProps(state) {
 }
 
 // function matchDispatchToProps() {
-  
+
 //   return {
 //     footerStatus : status => {
 //       footerStatusAction.footerStatus(status)

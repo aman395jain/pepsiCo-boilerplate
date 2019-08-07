@@ -15,9 +15,6 @@ class Header extends Component {
             <i className="far fa-bell ml-4 mr-2">
               <span className="badge">9</span>
             </i>
-            {/* <i className="far fa-envelope icon-envelope ml-4 mr-4">
-            <span className="badge">1</span>
-          </i> */}
             <div className="d-flex">
               <div className="user-name mr-2">
                 <p>Peter Handscomb</p>
@@ -30,18 +27,6 @@ class Header extends Component {
                 height="30"
                 alt="Profile"
               />
-              {/* <div
-              className="dropdown-menu image-dropdown-menu"
-              aria-labelledby="dropdownMenuButton"
-            >
-              <i className="fas fa-caret-up" />
-              <a className="dropdown-item" href="htttps:www.google.com">
-                Profile
-              </a>
-              <a className="dropdown-item" href="htttps:www.google.com">
-                Logout
-              </a>
-            </div> */}
             </div>
           </div>
         </div>
