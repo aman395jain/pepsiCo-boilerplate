@@ -24,9 +24,10 @@ export const authService = {
         "Access-Control-Allow-Origin": "*"
       }
     };
+    const proxyurl = "https://cors-anywhere.herokuapp.com/";
     return axios
       .post(
-        "http://gateway.och.40.122.144.129.nip.io/api/authenticate",
+        proxyurl + "http://gateway.och.40.122.144.129.nip.io/api/authenticate",
         {
           password: "welc0me2",
           rememberMe: true,
@@ -36,7 +37,7 @@ export const authService = {
       )
       .then(response => {
         console.log("in the auth service>>>>>>>", response);
-        localStorage.setItem("user-jwt", response.authorization);
+        localStorage.setItem("user-login-jwt", response.data.id_token);
       })
       .catch(error => {
         console.log("auth service error", error);

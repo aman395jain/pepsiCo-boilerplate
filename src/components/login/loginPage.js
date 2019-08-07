@@ -9,7 +9,7 @@ import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 
-// import { authService } from "../../services/authService";
+import { authService } from "../../services/authService";
 import "./_loginPage.scss";
 import * as constant from "../../assets/constants/validations-constant";
 // import { userAuthActions } from "../../actions/authAcions";
@@ -40,7 +40,7 @@ class LoginPage extends Component {
     this.setState({ submitted: true });
     if (this.loginForm.value) {
       // this.props.history.push('/managerDashboard')
-      // authService.login(this.loginForm.value);
+      authService.login(this.loginForm.value);
       localStorage.setItem("user", this.loginForm.value)
       this.props.passParam("RACKS")
       this.props.userLoginStatus(

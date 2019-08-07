@@ -5,26 +5,32 @@ import classnames from 'classnames';
 import "./managerDashboard.scss";
 // import rackImage from "../../assets/images/Rack_Image.png";
 import rackImage from "../../assets/images/vending.jpg";
-import { rackData } from "../../assets/constants/_mockRackData";
 import Header from "../../shared/header/header"
-import Footer from "../../shared/footer/footer"
+import Footer from "../../shared/footer/footer";
+import { rackDataService } from "../../services/rackData.service"
 
 class ManagerDashboard extends Component {
-  _rackData = [];
+  
 
   state = {
     openDiv: false,
     isLogin: true,
     arrowClass: "fa fa-angle-down",
-    isActive: false
+    isActive: false,
+    _rackData : []
   }
 
   /* constructor(props) {
     super(props);
     
   } */
-  componentWillMount() {
-    this._rackData = rackData;
+  componentDidMount() {
+    rackDataService.rackData().then(result => {
+      this.setState({
+        _rackData : result.data
+      })
+    })
+    
   }
 
   displayDivData = () => {
@@ -53,7 +59,7 @@ class ManagerDashboard extends Component {
         <div>
           <Header isAuthorized={this.state.isLogin} />
           <div className="manager-dashboard">
-            {this._rackData.map((data, index) => {
+            {this.state._rackData.map((data, index) => {
               return (
                 <div key={index} className={classnames("media-wrapper", { 'active': this.state.isActive })}>
                   <div className="media rack-content">
@@ -63,7 +69,7 @@ class ManagerDashboard extends Component {
                         <Link to="/dashbardDescription">
                           <strong>{data.name}</strong>
                           <p>{data.locationName}</p>
-                          <p>{data.currentMode}</p>
+                          <p className={classnames({ 'green': data.currentMode === "INVENTORY" })}>{data.currentMode}</p>
 
                         </Link>
                         <i className={`${this.state.arrowClass} icon-pos`} data-toggle="collapse" href={`#collapseId${index}`} onClick={this.changeIcon}></i>
