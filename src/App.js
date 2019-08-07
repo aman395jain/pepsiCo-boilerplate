@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 // import { NavLink } from "react-router-dom";
-import Header from "./shared/header/header";
+// import Header from "./shared/header/header";
 
 import Router from "./Router";
 import { history } from "./helpers/history";
 import { connect } from "react-redux";
 import { alertActions } from "./actions/alertActions";
-import Footer from "./shared/footer/footer";
+// import Footer from "./shared/footer/footer";
 
 class App extends Component {
   constructor(props) {
@@ -28,9 +28,9 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        
+
         <Router />
-        
+
       </React.Fragment>
     );
   }

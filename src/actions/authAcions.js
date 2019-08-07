@@ -1,7 +1,7 @@
 import { userConstants } from "../assets/constants/store-constants";
 import { authService } from "../services/authService";
 import { alertActions } from "./alertActions";
-import { history } from "../helpers/history";
+// import { history } from "../helpers/history";
 //import { alertActions } from './';
 //import { history } from '../_helpers';
 
@@ -19,7 +19,7 @@ function login(username, password) {
       user => {
         console.log("login action called >>");
         dispatch(success(user));
-        
+
       },
       error => {
         dispatch(failure(error));
