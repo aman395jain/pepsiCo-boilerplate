@@ -27,3 +27,13 @@ export const alertConstants = {
 };
 
 /**********end ****************/
+
+/**********Footer State Constants ****************/
+export const footerStateConstant = {
+  RACK: "RACK",
+  HOME: "HOME",
+  CART: "CART",
+  QRSCAN: "QRSCAN"
+};
+
+/**********end ****************/

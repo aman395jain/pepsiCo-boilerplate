@@ -9,10 +9,12 @@ import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 
-import { authService } from "../../services/authService"
+import { authService } from "../../services/authService";
 import "./_loginPage.scss";
 import * as constant from "../../assets/constants/validations-constant";
-import { userAuthActions } from "../../actions/authAcions";
+// import { userAuthActions } from "../../actions/authAcions";
+// import { footerStatusAction } from "../../actions/footerStatusAction";
+import { userAuthActions, footerActions} from "../../actions/index"
 import facebookLogo from "../../assets/images/facebook_button.png";
 import googleLogo from "../../assets/images/google_logo.jpg";
 
@@ -25,7 +27,8 @@ class LoginPage extends Component {
     };
 
     // reset login status
-    this.props.dispatch(userAuthActions.logout());
+    // console.log("props in login", this.props);
+    // this.props.dispatch(userAuthActions.logout());
   }
 
   handleSubmit(e) {
@@ -34,7 +37,8 @@ class LoginPage extends Component {
     this.setState({ submitted: true });
     if (this.loginForm.value) {
       // this.props.history.push('/managerDashboard')
-      authService.login(this.loginForm.value)
+      // authService.login(this.loginForm.value);
+      this.props.passParam("RACKS")
     }
     //const { username, password } = this.state;
     // const { dispatch } = this.props;
@@ -54,7 +58,7 @@ class LoginPage extends Component {
   });
 
   render() {
-    console.log("this.state.type", this.state.type);
+    //console.log("this.state.type", this.state.type);
     return (
       <div className="container login-bg ">
         <div className="row login-main">
@@ -103,9 +107,11 @@ class LoginPage extends Component {
                           <p className="validation-info">
                             {touched &&
                               ((hasError("required") &&
-                                constant.userName_Validations.userName_Required) ||
+                                constant.userName_Validations
+                                  .userName_Required) ||
                                 (hasError("email") &&
-                                  constant.userName_Validations.valid_userName))}
+                                  constant.userName_Validations
+                                    .valid_userName))}
                           </p>
                         </div>
                       )}
@@ -140,10 +146,7 @@ class LoginPage extends Component {
                     <div className="justify-content-between align-items-center logged-In">
                       <div className="justify-content-between align-items-center Dont-have-an-accoun">
                         <span>Don't have an account?</span>
-                        <NavLink
-                          to="/"
-                          className="login-form-inner-links"
-                        >
+                        <NavLink to="/" className="login-form-inner-links">
                           Sign Up
                         </NavLink>
                       </div>
@@ -174,11 +177,28 @@ class LoginPage extends Component {
 //export default loginPage;
 
 function mapStateToProps(state) {
+  // console.log("in the login page", state);
   const { loggingIn } = state.authentication;
   return {
     loggingIn
   };
 }
 
-const connectedLoginPage = connect(mapStateToProps)(withRouter(LoginPage));
+// function matchDispatchToProps() {
+  
+//   return {
+//     footerStatus : status => {
+//       footerStatusAction.footerStatus(status)
+//     }
+//   }
+// }
+
+const actionCreators = {
+  passParam: footerActions.getFooterParam
+};
+
+const connectedLoginPage = connect(
+  mapStateToProps,
+  actionCreators
+)(withRouter(LoginPage));
 export { connectedLoginPage as LoginPage };
