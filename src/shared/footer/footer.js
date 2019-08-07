@@ -13,8 +13,8 @@ class Footer extends Component {
           </div>
 
           <div className="icon-row">
-            <i className="fa fa-cubes footer-icons" aria-hidden="true" />
-            <span className="footer-text">Racks</span>{" "}
+            <i className="fa fa-cubes footer-icons active" aria-hidden="true" />
+            <span className="footer-text active">Racks</span>{" "}
           </div>
           <div className="icon-row">
             <i className="fa fa-qrcode footer-icons" aria-hidden="true" />
