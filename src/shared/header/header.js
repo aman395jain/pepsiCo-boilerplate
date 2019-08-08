@@ -27,12 +27,6 @@ class Header extends Component {
     }
   }
   render() {
-    // console.log(
-    //   "pathToExcludeHeader.indexOf(window.location.pathname)",
-    //   pathToExcludeHeader.indexOf(window.location.pathname)
-    // );
-    // if (pathToExcludeHeader.indexOf(window.location.pathname) >= 0) return null;
-    // console.log("in the header", this.props)
     return (
       <header className="align-items-center top-header d-flex justify-content-between">
         <a href="#">
