@@ -1,32 +1,54 @@
 import React, { Component } from "react";
-
+import classnames from "classnames";
 import "./_footer.scss";
 
 class Footer extends Component {
+  state = {
+    selectedTab: "Racks"
+  }
+  footerJSON = [
+    {
+      "name": "Home",
+      "classes": "fa fa-home footer-icons",
+      "navigation": "/home"
+    }, {
+      "name": "Racks",
+      "classes": "fa fa-cubes footer-icons",
+      "navigation": "/managerDashboard"
+    }, {
+      "name": "QrScan",
+      "classes": "fa fa-qrcode footer-icons",
+      "navigation": "/qrscan"
+    }, {
+      "name": "Cart",
+      "classes": "fa fa-shopping-cart footer-icons",
+      "navigation": "/cart"
+    },
+  ];
+
+  setSelected(data, index) {
+    this.setState({ selectedTab: data.name });
+    // this.navigate(index);
+  }
+  navigate(index) {
+    this.props.history.push(this.footerJSON[index].navigation);
+  }
   render() {
     console.log("in the footer", this.props.isAuthorized);
     return this.props.isAuthorized ? (
       <footer className="footer-row d-flex footer-row-inner justify-content-between">
-          <div className="icon-row">
-            <i className="fa fa-home footer-icons" aria-hidden="true" />
-            <span className="footer-text">Home</span>
-          </div>
-
-          <div className="icon-row">
-            <i className="fa fa-cubes footer-icons active" aria-hidden="true" />
-            <span className="footer-text active">Racks</span>{" "}
-          </div>
-          <div className="icon-row">
-            <i className="fa fa-qrcode footer-icons" aria-hidden="true" />
-            <span className="footer-text">QrScan</span>
-          </div>
-          <div className="icon-row">
-            <i
-              className="fa fa-shopping-cart footer-icons"
-              aria-hidden="true"
-            />
-            <span className="footer-text">Cart</span>
-          </div>
+        {this.footerJSON.map((data, index) => {
+          return (
+            <div className="icon-row" key={index} onClick={() => this.setSelected(data, index)}>
+              <i className={classnames(data.classes, {
+                active: this.state.selectedTab === data.name
+              })} aria-hidden="true" />
+              <span className={classnames("footer-text", {
+                active: this.state.selectedTab === data.name
+              })}>{data.name}</span>
+            </div>
+          );
+        })}
       </footer>
     ) : null;
   }

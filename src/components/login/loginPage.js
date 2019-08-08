@@ -49,7 +49,7 @@ class LoginPage extends Component {
           this.loginForm.value.password
         )
       );
-      this.props.history.push('/managerDashboard')
+      this.props.history.push('/managerDashboard');
 
     }
     //const { username, password } = this.state;
