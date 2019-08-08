@@ -7,7 +7,7 @@ const DashboardDescription = () => {
   return (
     <div>
       <Header isAuthorized="true" />
-      <div className="container manager-dashboard">
+      <div className="container dashboard-description">
         <p>Work Under Process...</p>
         {/* <p>This is DashboardDescription Page............</p>
         <p>This is DashboardDescription Page............</p>
