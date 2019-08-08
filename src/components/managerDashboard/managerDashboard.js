@@ -9,7 +9,7 @@ import Header from "../../shared/header/header";
 import Footer from "../../shared/footer/footer";
 import InternalHeader from "../../shared/internalHeader/internal-header";
 import { rackDataService } from "../../services/rackData.service";
-import {rackData} from "../../assets/constants/_mockRackData" 
+import { rackData } from "../../assets/constants/_mockRackData"
 
 class ManagerDashboard extends Component {
 
@@ -76,53 +76,55 @@ class ManagerDashboard extends Component {
         <div>
           <Header isAuthorized={this.state.isLogin} />
           <div className="manager-dashboard">
-          <InternalHeader></InternalHeader>
-            {this.state._rackData.map((data, index) => {
-              return (
-                <div
-                  key={index}
-                  className={classnames("media-wrapper", {
-                    active: this.state.isActive
-                  })}
-                >
-                  <div className="media rack-content">
-                    <Link to="/dashbardDescription">
-                      <img
-                        src={rackImage}
-                        className="mr-3 thumb-img"
-                        alt="..."
-                      />
-                    </Link>
-                    <div className="media-body">
-                      <div className="content-center">
-                        <Link to="/dashbardDescription">
-                          <strong>{data.name}</strong>
-                          <p>{data.locationName}</p>
-                          <p
-                            className={classnames({
-                              green: data.currentMode === "INVENTORY"
-                            })}
-                          >
-                            {data.currentMode}
-                          </p>
-                        </Link>
-                        <i className="fa fa-angle-down icon-pos" data-toggle="collapse" id={`#collapseId${index}`} href={`#collapseId${index}`} onClick={() => this.changeIcon(index)}></i>
+            <InternalHeader></InternalHeader>
+            <div id="accordion">
+              {this.state._rackData.map((data, index) => {
+                return (
+                  <div
+                    key={index}
+                    className={classnames("media-wrapper", {
+                      active: this.state.isActive
+                    })}
+                  >
+                    <div className="media rack-content">
+                      <Link to="/dashbardDescription">
+                        <img
+                          src={rackImage}
+                          className="mr-3 thumb-img"
+                          alt="..."
+                        />
+                      </Link>
+                      <div className="media-body">
+                        <div className="content-center">
+                          <Link to="/dashbardDescription">
+                            <strong>{data.name}</strong>
+                            <p>{data.locationName}</p>
+                            <p
+                              className={classnames({
+                                green: data.currentMode === "INVENTORY"
+                              })}
+                            >
+                              {data.currentMode}
+                            </p>
+                          </Link>
+                          <i className="fa fa-angle-down icon-pos" data-toggle="collapse" id={`#collapseId${index}`} href={`#collapseId${index}`} onClick={() => this.changeIcon(index)}></i>
+                        </div>
+                      </div>
+                    </div>
+                    <div data-parent="#accordion"
+                      className="collapse media-details-collapse"
+                      id={`collapseId${index}`}
+                    >
+                      <div className="">
+                        <p>Store ID: {data.store.id}</p>
+                        <p>Store Name :{data.store.name}</p>
+                        <p>Quantities in Stock : {data.store.quantityInStocks}</p>
                       </div>
                     </div>
                   </div>
-                  <div
-                    className="collapse media-details-collapse"
-                    id={`collapseId${index}`}
-                  >
-                    <div className="">
-                      <p>Store ID: {data.store.id}</p>
-                      <p>Store Name :{data.store.name}</p>
-                      <p>Quantities in Stock : {data.store.quantityInStocks}</p>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
           <Footer isAuthorized={this.state.isLogin} />
         </div>
