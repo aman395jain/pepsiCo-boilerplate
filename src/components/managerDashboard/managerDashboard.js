@@ -10,14 +10,14 @@ import Footer from "../../shared/footer/footer";
 import { rackDataService } from "../../services/rackData.service"
 
 class ManagerDashboard extends Component {
-  
+
 
   state = {
     openDiv: false,
     isLogin: true,
     arrowClass: "fa fa-angle-down",
     isActive: false,
-    _rackData : []
+    _rackData: []
   }
 
   /* constructor(props) {
@@ -27,10 +27,10 @@ class ManagerDashboard extends Component {
   componentDidMount() {
     rackDataService.rackData().then(result => {
       this.setState({
-        _rackData : result.data
+        _rackData: result.data
       })
     })
-    
+
   }
 
   displayDivData = () => {
@@ -42,12 +42,25 @@ class ManagerDashboard extends Component {
     }
   }
 
-  changeIcon = () => {
-    console.log("changeIcon changeIcon");
-    if (this.state.arrowClass === "fa fa-angle-down") {
-      this.setState({ arrowClass: "fa fa-angle-up" })
+  changeIcon = (id) => {
+    let elem = document.getElementById("#collapseId" + id)
+    if (elem.className == "fa fa-angle-down icon-pos") {
+      elem.classList.remove("fa");
+      elem.classList.remove("fa-angle-down");
+      elem.classList.remove("icon-pos");
+      //elem.classList.remove("fa fa-angle-up icon-pos");
+      elem.classList.add("fa");
+      elem.classList.add("fa-angle-up");
+      elem.classList.add("icon-pos");
+
     } else {
-      this.setState({ arrowClass: "fa fa-angle-down" })
+      elem.classList.remove("fa");
+      elem.classList.remove("fa-angle-up");
+      elem.classList.remove("icon-pos");
+      //elem.classList.remove("fa fa-angle-up icon-pos");
+      elem.classList.add("fa");
+      elem.classList.add("fa-angle-down");
+      elem.classList.add("icon-pos");
     }
     this.setState({ isActive: !this.state.isActive })
 
@@ -72,7 +85,7 @@ class ManagerDashboard extends Component {
                           <p className={classnames({ 'green': data.currentMode === "INVENTORY" })}>{data.currentMode}</p>
 
                         </Link>
-                        <i className={`${this.state.arrowClass} icon-pos`} data-toggle="collapse" href={`#collapseId${index}`} onClick={this.changeIcon}></i>
+                        <i className="fa fa-angle-down icon-pos" data-toggle="collapse" id={`#collapseId${index}`} href={`#collapseId${index}`} onClick={() => this.changeIcon(index)}></i>
                       </div>
                     </div>
                   </div>
