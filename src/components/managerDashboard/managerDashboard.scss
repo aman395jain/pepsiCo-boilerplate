@@ -8,13 +8,15 @@
     background: #fff;
     transition: all 0.3s;
     margin-top: 15px;
+    background: #fffee8;
     .media-details-collapse {
       padding: 10px;
       margin: 10px 10px 0;
-      background: #9dcae0;
-      border-radius: 3px 3px 0 0;
+      border-radius: 5px;
       position: relative;
       bottom: 10px;
+      border: 1px solid lightgray;
+      background: #fff;
       p {
         margin-bottom: 5px;
         color: #000;
@@ -23,6 +25,7 @@
     &.active {
       .media {
         border-bottom: 0;
+        background: #fffee8;
       }
       .media-body {
         &::after {
@@ -30,6 +33,9 @@
           border-left: 0;
         }
       }
+      .fa-angle-down:before {
+        content: "\f106";
+    }
     }
   }
   .media {
@@ -56,7 +62,7 @@
       &::after {
         content: '';
         width: 30px;
-        background: #efefef;
+        background: #f7f7f7;
         position: absolute;
         top: -10px;
         right: -30px;

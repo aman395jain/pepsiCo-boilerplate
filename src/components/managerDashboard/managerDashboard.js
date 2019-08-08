@@ -18,8 +18,8 @@ class ManagerDashboard extends Component {
     openDiv: false,
     isLogin: true,
     arrowClass: "fa fa-angle-down",
-    isActive: false,
-    _rackData: []
+    _rackData: [],
+    selectedIndex: -1
   }
 
   /* constructor(props) {
@@ -48,26 +48,11 @@ class ManagerDashboard extends Component {
   };
 
   changeIcon = (id) => {
-    let elem = document.getElementById("#collapseId" + id)
-    if (elem.className == "fa fa-angle-down icon-pos") {
-      elem.classList.remove("fa");
-      elem.classList.remove("fa-angle-down");
-      elem.classList.remove("icon-pos");
-      //elem.classList.remove("fa fa-angle-up icon-pos");
-      elem.classList.add("fa");
-      elem.classList.add("fa-angle-up");
-      elem.classList.add("icon-pos");
-
+    if (this.state.selectedIndex != id) {
+      this.setState({ selectedIndex: id });
     } else {
-      elem.classList.remove("fa");
-      elem.classList.remove("fa-angle-up");
-      elem.classList.remove("icon-pos");
-      //elem.classList.remove("fa fa-angle-up icon-pos");
-      elem.classList.add("fa");
-      elem.classList.add("fa-angle-down");
-      elem.classList.add("icon-pos");
+      this.setState({ selectedIndex: -1 });
     }
-    this.setState({ isActive: !this.state.isActive });
   };
 
   render() {
@@ -83,7 +68,7 @@ class ManagerDashboard extends Component {
                   <div
                     key={index}
                     className={classnames("media-wrapper", {
-                      active: this.state.isActive
+                      active: this.state.selectedIndex === index
                     })}
                   >
                     <div className="media rack-content">
