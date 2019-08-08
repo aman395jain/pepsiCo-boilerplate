@@ -4,7 +4,7 @@
         overflow-y: auto;
         margin-top: 25%;
         .media {
-          font-size: 18px;
+          font-size: 19px;
           padding: 10%;
           flex: 1;
           align-items: inherit;
@@ -16,6 +16,7 @@
               align-items: center;
               .add-racks-content-row {
                 width: 50%;
+                margin-bottom: 0 !important;
                 .add-racks-content-data {
                   border: none;
                   background: #e8f0f3;
