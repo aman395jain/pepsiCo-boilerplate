@@ -45,8 +45,8 @@ class LoginPage extends Component {
       this.props.passParam("RACKS")
       this.props.userLoginStatus(
         userAuthActions.login(
-          this.loginForm.value.loginEmail,
-          this.loginForm.value.loginPassword
+          this.loginForm.value.username,
+          this.loginForm.value.password
         )
       );
       this.props.history.push('/managerDashboard')
@@ -60,8 +60,8 @@ class LoginPage extends Component {
   }
 
   loginForm = FormBuilder.group({
-    loginEmail: ["", [Validators.required, Validators.email]],
-    loginPassword: ["", [Validators.required, Validators.minLength(8)]]
+    username: ["", [Validators.required]],
+    password: ["", [Validators.required, Validators.minLength(8)]]
   });
 
   render() {
@@ -98,7 +98,7 @@ class LoginPage extends Component {
                   render={({ invalid }) => (
                     <form onSubmit={e => this.handleSubmit(e)}>
                       <FieldControl
-                        name="loginEmail"
+                        name="username"
                         options={{ validators: Validators.required }}
                         render={({ handler, touched, hasError }) => (
                           <div
@@ -106,7 +106,7 @@ class LoginPage extends Component {
                             style={{ position: "relative" }}
                           >
                             <input
-                              type="email"
+                              type="text"
                               className="form-control"
                               id="exampleInputEmail1"
                               aria-describedby="emailHelp"
@@ -126,7 +126,7 @@ class LoginPage extends Component {
                         )}
                       />
                       <FieldControl
-                        name="loginPassword"
+                        name="password"
                         options={{ validators: Validators.required }}
                         render={({ handler, touched, hasError }) => (
                           <div

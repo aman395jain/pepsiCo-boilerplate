@@ -1,3 +1,9 @@
+.dropdown-menu {
+  .fa-caret-up {
+    right: 14px;
+  }
+}
+
 .top-header {
   height: 55px;
   border-top: 1px solid #c4c8ca;
@@ -45,6 +51,8 @@
     right: -4px;
     min-height: 14px;
   }
+
+
   .dropdown-toggle {
     &::after {
       content: none;
@@ -52,13 +60,13 @@
   }
   .image-dropdown-menu {
     top: 12px !important;
-    left: -100px !important;
+    // left: -100px !important;
   }
 
   @media (max-width: 768px) {
     .image-dropdown-menu {
       top: 12px !important;
-      left: -24px !important;
+       left: 4px !important;
       border-radius: 10px;
     }
   }

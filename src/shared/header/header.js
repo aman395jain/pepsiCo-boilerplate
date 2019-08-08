@@ -21,7 +21,21 @@ class Header extends Component {
             width="30"
             height="30"
             alt="Profile"
+            data-toggle="dropdown"
           />
+
+          <div
+            className="dropdown-menu image-dropdown-menu"
+            aria-labelledby="dropdownMenuButton"
+          >
+            <i className="fas fa-caret-up" />
+            <a className="dropdown-item" href="htttps:www.google.com">
+              My Account
+              </a>
+            <a className="dropdown-item" href="htttps:www.google.com">
+              Logout
+              </a>
+          </div>
         </div>
       );
     }

@@ -1,20 +1,7 @@
-// import { SET_REGISTER } from "../actions/types";
-
-// const initialState = { isAuthentication: false, regData: {} };
-
-// export default function(state = initialState, action) {
-//   // console.log("reducers", action.type);
-//   switch (action.type) {
-//     case SET_REGISTER:
-//       return action.payload;
-//     default:
-//       return state;
-//   }
-// }
 import { userConstants } from "../assets/constants/store-constants";
 
-// let user = JSON.parse(localStorage.getItem("user"));
-let user = ""
+let user = JSON.parse(localStorage.getItem("user"));
+// let user = ""
 const initialState = user ? { loggedIn: true, user } : {};
 
 export function authentication(state = initialState, action) {

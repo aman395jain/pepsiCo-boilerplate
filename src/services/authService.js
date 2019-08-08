@@ -2,6 +2,11 @@ import axios from "axios";
 
 export const authService = {
   login: loginFormData => {
+    console.log("loginFormData ::::::::: 777 ", loginFormData);
+    const rememberMeObj = { rememberMe: true };
+    //const completeDataObj = { ...loginFormData, ...rememberMeObj };
+    var completeDataObj = Object.assign(loginFormData, rememberMeObj);
+    console.log("completeDataObj ::::::::: 9999 ", completeDataObj);
     // return axios.get(
     //   "http://ec2-35-153-131-42.compute-1.amazonaws.com:8080/usermgmt/users/43"
     // );
@@ -18,6 +23,13 @@ export const authService = {
     //   resolve(user);
     // });
     // console.log("in the auth service", loginFormData);
+    //office-snacks-api-user
+    //welc0me2
+    //{
+    //   password: "welc0me2",
+    //   rememberMe: true,
+    //   username: "office-snacks-api-user"
+    // }
     let axiosConfig = {
       headers: {
         "Content-Type": "application/json",
@@ -28,16 +40,21 @@ export const authService = {
     return axios
       .post(
         proxyurl + "http://gateway.och.40.122.144.129.nip.io/api/authenticate",
-        {
-          password: "welc0me2",
-          rememberMe: true,
-          username: "office-snacks-api-user"
-        },
+        completeDataObj,
         axiosConfig
       )
       .then(response => {
         console.log("in the auth service>>>>>>>", response);
-        localStorage.setItem("user-login-jwt", response.data.id_token);
+        if (response.status === 200) {
+          var loggedInObj = { loggedIn: true };
+          var userData = JSON.parse(response.config.data);
+          delete userData.password;
+          userData = Object.assign(userData, loggedInObj);
+
+          localStorage.setItem("user", JSON.stringify(userData));
+          localStorage.setItem("user-login-jwt", response.data.id_token);
+        }
+
       })
       .catch(error => {
         console.log("auth service error", error);
