@@ -1,0 +1,36 @@
+.add-rack-top{
+    margin-top: 56px;
+    .add-racks {
+        overflow-y: auto;
+        margin-top: 25%;
+        .media {
+          font-size: 18px;
+          padding: 10%;
+          flex: 1;
+          align-items: inherit;
+          flex-flow: wrap;
+          .media-body {
+            .add-racks-content {
+              height: 60px;
+              display: flex;
+              align-items: center;
+              .add-racks-content-row {
+                width: 50%;
+                .add-racks-content-data {
+                  border: none;
+                  background: #e8f0f3;
+                  border-bottom: 1px solid;
+                  border-radius: 0 !important;
+                }
+              }
+              .add-racks-button-row {
+                margin: 7%;
+                width: 50%;
+              }
+            }
+          }
+        }
+      }
+      
+}
+

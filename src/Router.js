@@ -7,7 +7,9 @@ import ManagerDashboard from "./components/managerDashboard/managerDashboard";
 import { PageNotFound } from "./shared/error/PageNotFound";
 import Animations from "./components/animations/animations";
 import AccordionApp from "./components/accordion/AccordionApp";
-import DashbardDescription from "./components/dasboardDescription/dashboardDescription"
+import DashbardDescription from "./components/dasboardDescription/dashboardDescription";
+import AddRack from "./components/addRacks/AddRack"
+import RemoveRacks from "./components/removeRacks/removeRacks"
 
 const Router = () => (
   <Switch>
@@ -16,6 +18,8 @@ const Router = () => (
     <Route exact path="/animation" component={Animations} />
     <Route exact path="/accordion" component={AccordionApp} />
     <Route exact path="/dashbardDescription" component={DashbardDescription} />
+    <Route exact path="/addRack" component={AddRack} />
+    <Route exact path="/removeRack" component={RemoveRacks} />
     <Route component={PageNotFound} />
   </Switch>
 );

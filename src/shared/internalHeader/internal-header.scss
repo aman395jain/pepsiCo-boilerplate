@@ -1,6 +1,11 @@
 .internal-header {
     padding: 5%;
     height: 30px;
-    color: #f6f6f6;
     background-color: black;
+    a {
+        color: #ffffff80 !important;
+    }
+    .active {
+        color: #f6f6f6 !important; 
+    } 
 }
