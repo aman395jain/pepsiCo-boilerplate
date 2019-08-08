@@ -33,7 +33,7 @@ class RemoveRacks extends Component {
       <React.Fragment>
         <div>
           <Header isAuthorized={this.state.isLogin} />
-          <div className="manager-dashboard">
+          <div className="remove-dashboard">
             <InternalHeader />
             {this.state._rackData.map((data, index) => {
               return (
