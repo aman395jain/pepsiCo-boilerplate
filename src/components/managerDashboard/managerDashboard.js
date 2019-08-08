@@ -76,7 +76,7 @@ class ManagerDashboard extends Component {
         <div>
           <Header isAuthorized={this.state.isLogin} />
           <div className="manager-dashboard">
-          {/* <InternalHeader></InternalHeader> */}
+          <InternalHeader></InternalHeader>
             {this.state._rackData.map((data, index) => {
               return (
                 <div

@@ -1,11 +1,13 @@
 import React from "react";
 
-import "./internal-header.scss"
+import "./internal-header.scss";
 
 const InternalHeader = () => {
   return (
     <header className="align-items-center internal-header d-flex justify-content-between">
-      Home
+      <div>Home</div>
+      <div>Add</div>
+      <div>Remove</div>
     </header>
   );
 };
