@@ -14,7 +14,8 @@ export const userAuthActions = {
 function login(username, password) {
   return dispatch => {
     dispatch(request({ username }));
-
+    console.log("Dispatch an Action.............444444444 username ", username);
+    console.log("Dispatch an Action.............444444444 password ", password);
     authService.login(username, password).then(
       user => {
         console.log("login action called >>");

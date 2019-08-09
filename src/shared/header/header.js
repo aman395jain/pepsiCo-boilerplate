@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import { Link } from "react-router-dom";
 import "./_header.scss";
 import logo from "../../assets/images/logo.png";
 
@@ -7,7 +7,7 @@ class Header extends Component {
   state = {};
 
   renderHdrRight() {
-    // console.log("in the header", this.props.isAuthorized)
+    
     if (this.props.isAuthorized) {
       return (
         <div className="d-flex">
@@ -29,12 +29,9 @@ class Header extends Component {
             aria-labelledby="dropdownMenuButton"
           >
             <i className="fas fa-caret-up" />
-            <a className="dropdown-item" href="htttps:www.google.com">
-              My Account
-              </a>
-            <a className="dropdown-item" href="htttps:www.google.com">
-              Logout
-              </a>
+            <Link className="dropdown-item" to="/myAccount">My Account</Link>
+            <Link className="dropdown-item" to="/logoutPage">Logout</Link>
+
           </div>
         </div>
       );

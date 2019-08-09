@@ -34,24 +34,29 @@ class LoginPage extends Component {
     // this.props.dispatch(userAuthActions.logout());
   }
 
-  handleSubmit(e) {
+  handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("submit form >>", this.loginForm.value);
     this.setState({ submitted: true });
     if (this.loginForm.value) {
-      // this.props.history.push('/managerDashboard')
-      authService.login(this.loginForm.value);
-      localStorage.setItem("user", this.loginForm.value)
-      this.props.passParam("RACKS")
-      this.props.userLoginStatus(
-        userAuthActions.login(
-          this.loginForm.value.username,
-          this.loginForm.value.password
-        )
-      );
-      this.props.history.push('/managerDashboard');
+
+      //const loggendInStatus = await authService.login(this.loginForm.value);
+      const loggendInStatus = await this.props.userLogin(this.loginForm.value);
+      console.log("loggendInStatus :::::::::::::::", loggendInStatus)
+      if (loggendInStatus === true) {
+        this.props.history.push('/managerDashboard')
+      }
+      //localStorage.setItem("user", this.loginForm.value)
+      //this.props.passParam("RACKS")
+      // this.props.userLoginStatus(
+      //   userAuthActions.login(
+      //     this.loginForm.value
+      //   )
+      // );
+      //this.props.history.push('/managerDashboard')
 
     }
+
+    //this.props.login(username, password);
     //const { username, password } = this.state;
     // const { dispatch } = this.props;
     // if (this.loginForm.value) {
@@ -205,7 +210,7 @@ function mapStateToProps(state) {
 
 const actionCreators = {
   passParam: footerActions.getFooterParam,
-  userLoginStatus: userAuthActions.login
+  userLogin: userAuthActions.login
 };
 
 const connectedLoginPage = connect(

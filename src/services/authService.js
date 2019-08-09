@@ -50,18 +50,21 @@ export const authService = {
           var userData = JSON.parse(response.config.data);
           delete userData.password;
           userData = Object.assign(userData, loggedInObj);
-
+          console.log("Status Logged IN", userData)
           localStorage.setItem("user", JSON.stringify(userData));
           localStorage.setItem("user-login-jwt", response.data.id_token);
+          return true;
         }
 
       })
       .catch(error => {
         console.log("auth service error", error);
+        return false;
       });
   },
   logout: () => {
     // remove user from local storage to log user out
     localStorage.removeItem("user");
+    localStorage.removeItem("user-login-jwt");
   }
 };
