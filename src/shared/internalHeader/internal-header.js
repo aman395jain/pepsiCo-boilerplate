@@ -1,45 +1,41 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import classnames from "classnames";
-import "./internal-header.scss";
+import { NavLink } from "react-router-dom";
+import "./_internalHeader.scss";
 
 class InternalHeader extends Component {
   state = {
     selectedTab: "Home"
-  }
+  };
+
   iHeaderJSON = [
     {
-      "name": "Home",
-      "navigation": "/managerDashboard"
-    }, {
-      "name": "Add Rack",
-      "navigation": "/addRack"
-    }, {
-      "name": "Remove Rack",
-      "navigation": "/removeRack"
+      name: "Home",
+      navigation: "/managerDashboard"
     },
-  ];
-  setSelected(data) {
-    this.setState({ selectedTab: data.name });
-  }
-
-  refCallback(node) {
-    console.log(node)
-    node.click = () => {
-      node.focus();
+    {
+      name: "Add Rack",
+      navigation: "/addRack"
+    },
+    {
+      name: "Remove Rack",
+      navigation: "/removeRack"
     }
-  }
+  ];
+
   render() {
     return (
       <header className="align-items-center internal-header d-flex justify-content-between">
         {this.iHeaderJSON.map((data, index) => {
           return (
-            <Link key={index} className={classnames({ active: this.state.selectedTab === data.name })} to={data.navigation} onClick={() => this.setSelected(data)}>{data.name}</Link>
+            <NavLink key={index} to={data.navigation} activeClassName="active">
+              {data.name}
+            </NavLink>
+            // </div>
           );
         })}
       </header>
     );
   }
-};
+}
 
 export default InternalHeader;
