@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import classnames from "classnames";
+import Swipeout from "rc-swipeout";
+import "rc-swipeout/assets/index.css";
 
 import { rackData } from "../../assets/constants/_mockRackData";
 import rackImage from "../../assets/images/vending.jpg";
@@ -43,23 +45,37 @@ class RemoveRacks extends Component {
                     active: this.state.isActive
                   })}
                 >
-                  <div className="media">
-                    <img src={rackImage} className="mr-3 thumb-img" alt="..." />
-                    <div className="media-body">
-                      <div className="content-center">
-                        <strong>{data.name}</strong>
-                        <p>{data.locationName}</p>
-                        <p
-                          className={classnames({
-                            green: data.currentMode === "INVENTORY"
-                          })}
-                        >
-                          {data.currentMode}
-                        </p>
-                        <i className="fa fa-trash icon-pos" />
+                  <Swipeout
+                    right={[
+                      {
+                        text: "delete",
+                        style: { backgroundColor: "red", color: "white" },
+                        className: "custom-class-2"
+                      }
+                    ]}
+                  >
+                    <div className="media">
+                      <img
+                        src={rackImage}
+                        className="mr-3 thumb-img"
+                        alt="..."
+                      />
+                      <div className="media-body">
+                        <div className="content-center">
+                          <strong>{data.name}</strong>
+                          <p>{data.locationName}</p>
+                          <p
+                            className={classnames({
+                              green: data.currentMode === "INVENTORY"
+                            })}
+                          >
+                            {data.currentMode}
+                          </p>
+                          {/* <i className="fa fa-trash icon-pos" /> */}
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </Swipeout>
                 </div>
               );
             })}

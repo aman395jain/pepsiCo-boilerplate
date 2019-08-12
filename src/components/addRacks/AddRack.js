@@ -4,6 +4,7 @@ import InternalHeader from "../../shared/internalHeader/internal-header";
 import "./_addRack.scss";
 import Header from "../../shared/header/header";
 import Footer from "../../shared/footer/footer";
+import VendingMachine from "../../assets/images/Rack_Image.png";
 
 class AddRack extends Component {
   constructor(props) {
@@ -30,9 +31,12 @@ class AddRack extends Component {
     return (
       <React.Fragment>
         <Header isAuthorized="false" />
-        <div className = "add-rack-top">
+        <div className="add-rack-top">
           <InternalHeader />
           <div className="container add-racks">
+            <div className="vending-machine">
+              <img className="vending-machine-image" src={VendingMachine} />
+            </div>
             <form name="form" onSubmit={this.handleSubmit}>
               <div className="media">
                 <div className="media-body">
@@ -80,8 +84,7 @@ class AddRack extends Component {
             </form>
           </div>
         </div>
-          <Footer isAuthorized="false" />
-
+        <Footer isAuthorized="false" />
       </React.Fragment>
     );
   }
