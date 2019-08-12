@@ -14,7 +14,8 @@ import "./_loginPage.scss";
 import * as constant from "../../assets/constants/validations-constant";
 // import { userAuthActions } from "../../actions/authAcions";
 // import { footerStatusAction } from "../../actions/footerStatusAction";
-import { userAuthActions, footerActions } from "../../actions/index"
+
+import { userAuthActions, footerActions, alertActions } from "../../actions/index"
 import facebookLogo from "../../assets/images/facebook_button.png";
 import googleLogo from "../../assets/images/google_logo.jpg";
 import Header from "../../shared/header/header"
@@ -40,10 +41,13 @@ class LoginPage extends Component {
     if (this.loginForm.value) {
 
       //const loggendInStatus = await authService.login(this.loginForm.value);
-      const loggendInStatus = await this.props.userLogin(this.loginForm.value);
+      var loggendInStatus = await this.props.userLogin(this.loginForm.value.username, this.loginForm.value.password);
       console.log("loggendInStatus :::::::::::::::", loggendInStatus)
       if (loggendInStatus === true) {
         this.props.history.push('/managerDashboard')
+      } else {
+        //dispatch(alertActions.error("Invalid login details."));
+        this.props.history.push('/');
       }
       //localStorage.setItem("user", this.loginForm.value)
       //this.props.passParam("RACKS")

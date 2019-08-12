@@ -1,8 +1,9 @@
 import React, { Component } from "react";
+import { Router } from "react-router-dom";
 // import { NavLink } from "react-router-dom";
 // import Header from "./shared/header/header";
 
-import Router from "./Router";
+import Route from "./Router";
 import { history } from "./helpers/history";
 import { connect } from "react-redux";
 import { alertActions } from "./actions/alertActions";
@@ -11,26 +12,28 @@ import { alertActions } from "./actions/alertActions";
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { isLogin: false };
-    if (window.location.pathname === "/") {
-      this.state = { isLogin: false };
-    } else {
-      this.state = { isLogin: true };
-    }
-    const { dispatch } = this.props;
     history.listen((location, action) => {
-      // console.log("APP releoaded with location", location);
-
+      console.log("History Location......", location);
+      console.log("Action Location.......", action);
+      console.log("PASS history location..........")
       // clear alert on location change
-      dispatch(alertActions.clear());
+      this.props.clearAlerts();
     });
+
   }
+
+
   render() {
+    const { alert } = this.props;
     return (
       <React.Fragment>
-
-        <Router />
-
+        {
+          alert.message &&
+          <div className={`alert ${alert.type}`}>{alert.message}</div>
+        }
+        <Router history={history}>
+          <Route />
+        </Router>
       </React.Fragment>
     );
   }
@@ -45,5 +48,10 @@ function mapStateToProps(state) {
   };
 }
 
-const connectedApp = connect(mapStateToProps)(App);
+const actionCreators = {
+  clearAlerts: alertActions.clear
+};
+
+
+const connectedApp = connect(mapStateToProps, actionCreators)(App);
 export { connectedApp as App };
