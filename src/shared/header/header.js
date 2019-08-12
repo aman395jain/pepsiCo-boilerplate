@@ -7,7 +7,7 @@ class Header extends Component {
   state = {};
 
   renderHdrRight() {
-    
+
     if (this.props.isAuthorized) {
       return (
         <div className="d-flex">

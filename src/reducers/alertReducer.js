@@ -1,7 +1,6 @@
 import { alertConstants } from "../assets/constants/store-constants";
 
 export function alert(state = {}, action) {
-  console.log("You are in alert reducer>>>>>>>>>>> ", action.message)
   switch (action.type) {
     case alertConstants.SUCCESS:
       return {

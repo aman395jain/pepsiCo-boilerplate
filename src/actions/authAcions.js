@@ -2,13 +2,10 @@ import { userConstants } from "../assets/constants/store-constants";
 import { authService } from "../services/authService";
 import { alertActions } from "./alertActions";
 import { history } from "../helpers/history";
-//import { alertActions } from './';
-//import { history } from '../_helpers';
 
 export const userAuthActions = {
   login,
   logout
-  //getAll
 };
 
 function login(username, password) {
@@ -20,11 +17,9 @@ function login(username, password) {
           history.push("/managerDashboard")
         } else {
           dispatch(alertActions.error("Invalid Login Details."));
-          //history.push('/loginPage')
         }
       },
       error => {
-        console.log("login action failed called error >>", error);
         dispatch(alertActions.error("Failed"));
       }
     );

@@ -8,8 +8,7 @@ export const PrivateRoute = ({ component: Component, ...rest }) => (
       localStorage.getItem("user") ? (
         <Component {...props} />
       ) : (
-
-          window.location = "http://localhost:3000"
+          <Redirect to={{ pathname: '/', state: { from: props.location } }} />
         )
     }
   />
