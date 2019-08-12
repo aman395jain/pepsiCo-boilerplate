@@ -1,12 +1,15 @@
 import axios from "axios";
 
 export const authService = {
-  login: loginFormData => {
-    console.log("loginFormData ::::::::: 777 ", loginFormData);
-    const rememberMeObj = { rememberMe: true };
+  login: (username, password) => {
+    console.log("username ::::::::: 777 ", username);
+    console.log("password ::::::::: 777 ", password);
+    //const rememberMeObj = { rememberMe: true };
+    var loginObj = { username: username, password: password, rememberMe: true };
+    console.log("loginObj :         ", loginObj)
     //const completeDataObj = { ...loginFormData, ...rememberMeObj };
-    var completeDataObj = Object.assign(loginFormData, rememberMeObj);
-    console.log("completeDataObj ::::::::: 9999 ", completeDataObj);
+    //var completeDataObj = Object.assign(loginFormData, rememberMeObj);
+    //console.log("completeDataObj ::::::::: 9999 ", completeDataObj);
     // return axios.get(
     //   "http://ec2-35-153-131-42.compute-1.amazonaws.com:8080/usermgmt/users/43"
     // );
@@ -40,7 +43,7 @@ export const authService = {
     return axios
       .post(
         proxyurl + "http://gateway.och.40.122.144.129.nip.io/api/authenticate",
-        completeDataObj,
+        loginObj,
         axiosConfig
       )
       .then(response => {
@@ -53,7 +56,7 @@ export const authService = {
           console.log("Status Logged IN", userData)
           localStorage.setItem("user", JSON.stringify(userData));
           localStorage.setItem("user-login-jwt", response.data.id_token);
-          return true;
+          return userData;
         }
 
       })

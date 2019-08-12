@@ -1,7 +1,7 @@
 import { userConstants } from "../assets/constants/store-constants";
 import { authService } from "../services/authService";
 import { alertActions } from "./alertActions";
-// import { history } from "../helpers/history";
+import { history } from "../helpers/history";
 //import { alertActions } from './';
 //import { history } from '../_helpers';
 
@@ -14,17 +14,18 @@ export const userAuthActions = {
 function login(username, password) {
   return dispatch => {
     dispatch(request({ username }));
-    console.log("Dispatch an Action.............444444444 username ", username);
-    console.log("Dispatch an Action.............444444444 password ", password);
     authService.login(username, password).then(
       user => {
-        console.log("login action called >>");
-        dispatch(success(user));
-
+        if (user) {
+          history.push("/managerDashboard")
+        } else {
+          dispatch(alertActions.error("Invalid Login Details."));
+          //history.push('/loginPage')
+        }
       },
       error => {
-        dispatch(failure(error));
-        dispatch(alertActions.error(error));
+        console.log("login action failed called error >>", error);
+        dispatch(alertActions.error("Failed"));
       }
     );
   };
