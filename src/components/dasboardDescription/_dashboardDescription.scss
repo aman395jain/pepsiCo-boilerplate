@@ -1,10 +1,10 @@
 .dashboard-description {
   padding: 0px;
   width: 100%;
-    overflow-x: scroll;
-    overflow-y: hidden;
-ul {
-  background-image: url(http://lefft.com/img/shelf_960.png);
+  overflow-x: scroll;
+  overflow-y: hidden;
+  ul {
+    background-image: url(http://lefft.com/img/shelf_960.png);
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: cover;
@@ -12,30 +12,36 @@ ul {
     width: 122%;
     display: flex;
     margin-bottom: 50px;
-  .progress {
-    height: 8px;
-    margin-bottom: 5px;
+    .progress {
+      height: 8px;
+      margin-bottom: 5px;
+    }
+  }
+  ul:first-child {
+    margin-top: 40%;
   }
 
-}
-ul:first-child{
-  margin-top: 40%;
-}
+  ul li {
+    position: relative;
+    list-style-type: none;
+    float: left;
+    margin-right: 4.5%;
+    bottom: 70px;
+    transition: all 0.2s ease;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    position: relative;
+    align-self: center;
+    border-right: 3px solid #2c2c2b;
+    padding: 0 10px;
+    .images-logo {
+      width: 80px;
+    }
+    
 
-ul li {
-  position: relative;
-  list-style-type: none;
-  float: left;
-  margin-right: 4.5%;
-  bottom: 70px;
-  transition: all 0.2s ease;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
-  position:relative;
-        align-self: center;
-  .images-logo {
-    width: 80px;
   }
-}
+  ul li:last-child {
+    border-right: none;
+  }
 }
