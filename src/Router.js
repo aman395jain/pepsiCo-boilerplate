@@ -1,5 +1,6 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
+import { connect } from "react-redux"
 
 import { LoginPage } from "./components/login/loginPage";
 import ManagerDashboard from "./components/managerDashboard/managerDashboard";
@@ -15,24 +16,30 @@ import MyAccount from "./components/myAccount/myAccount"
 import Header from "./shared/header/header"
 import Footer from "./shared/footer/footer"
 
-const Router = () => (
-  <React.Fragment>
-    <Header></Header>
+const Router = (props) => (
+  < React.Fragment >
+    <Header isAuthorized={props.authentication.loggedIn}></Header>
     < Switch >
       <Route exact path="/" component={LoginPage} />
       <PrivateRoute exact path="/managerDashboard" component={ManagerDashboard} />
-      <Route exact path="/animation" component={Animations} />
-      <Route exact path="/accordion" component={AccordionApp} />
-      <Route exact path="/dashbardDescription" component={DashbardDescription} />
-      <Route exact path="/addRack" component={AddRack} />
-      <Route exact path="/removeRack" component={RemoveRacks} />
+      <PrivateRoute exact path="/animation" component={Animations} />
+      <PrivateRoute exact path="/accordion" component={AccordionApp} />
+      <PrivateRoute exact path="/dashbardDescription" component={DashbardDescription} />
+      <PrivateRoute exact path="/addRack" component={AddRack} />
+      <PrivateRoute exact path="/removeRack" component={RemoveRacks} />
       <Route exact path="/loginPage" component={LoginPage} />
-      <Route exact path="/logoutPage" component={Logout} />
-      <Route exact path="/myAccount" component={MyAccount} />
+      <PrivateRoute exact path="/logoutPage" component={Logout} />
+      <PrivateRoute exact path="/myAccount" component={MyAccount} />
       <Route component={PageNotFound} />
     </Switch >
-    <Footer></Footer>
-  </React.Fragment>
+    <Footer isAuthorized={props.authentication.loggedIn} />
+  </React.Fragment >
 );
 
-export default Router;
+function mapStateToProps(state) {
+  const { authentication } = state;
+  return {
+    authentication
+  };
+}
+export default connect(mapStateToProps)(Router);

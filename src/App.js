@@ -13,7 +13,6 @@ class App extends Component {
     history.listen((location, action) => {
       this.props.clearAlerts();
     });
-
   }
 
 
@@ -21,7 +20,6 @@ class App extends Component {
     const { alert } = this.props;
     return (
       <React.Fragment>
-
         {
           alert.message &&
           <div className={`alert ${alert.type}`}>{alert.message}</div>
