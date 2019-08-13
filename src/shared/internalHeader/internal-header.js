@@ -11,23 +11,22 @@ const iHeaderJSON = [
   {
     name: "Add Rack",
     navigation: "/addRack"
-  },
-  {
-    name: "Remove Rack",
-    navigation: "/removeRack"
   }
 ];
 
 const InternalHeader = () => {
   return (
     <header className="align-items-center internal-header d-flex justify-content-between">
-      {iHeaderJSON.map((data, index) => {
+      <NavLink to="/addRack" activeClassName="active">
+        <i class="fa fa-plus-circle" aria-hidden="true" />
+      </NavLink>
+      {/* {iHeaderJSON.map((data, index) => {
         return (
           <NavLink key={index} to={data.navigation} activeClassName="active">
             {data.name}
           </NavLink>
         );
-      })}
+      })} */}
     </header>
   );
 };

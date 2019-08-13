@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import classnames from "classnames";
+import Swipeout from "rc-swipeout";
+import "rc-swipeout/assets/index.css";
 
 import "./managerDashboard.scss";
 // import rackImage from "../../assets/images/Rack_Image.png";
@@ -65,37 +67,47 @@ class ManagerDashboard extends Component {
                       active: this.state.selectedIndex === index
                     })}
                   >
-                    <div className="media rack-content">
-                      <Link to="/dashbardDescription">
-                        <img
-                          src={rackImage}
-                          className="mr-3 thumb-img"
-                          alt="..."
-                        />
-                      </Link>
-                      <div className="media-body">
-                        <div className="content-center">
-                          <Link to="/dashbardDescription">
-                            <strong>{data.name}</strong>
-                            <p>{data.locationName}</p>
-                            <p
-                              className={classnames({
-                                green: data.currentMode === "INVENTORY"
-                              })}
-                            >
-                              {data.currentMode}
-                            </p>
-                          </Link>
-                          <i
-                            className="fa fa-angle-down icon-pos"
-                            data-toggle="collapse"
-                            id={`#collapseId${index}`}
-                            href={`#collapseId${index}`}
-                            onClick={() => this.changeIcon(index)}
+                    <Swipeout
+                      right={[
+                        {
+                          text: "delete",
+                          style: { backgroundColor: "red", color: "white" },
+                          className: "custom-class-2"
+                        }
+                      ]}
+                    >
+                      <div className="media rack-content">
+                        <Link to="/dashbardDescription">
+                          <img
+                            src={rackImage}
+                            className="mr-3 thumb-img"
+                            alt="..."
                           />
+                        </Link>
+                        <div className="media-body">
+                          <div className="content-center">
+                            <Link to="/dashbardDescription">
+                              <strong>{data.name}</strong>
+                              <p>{data.locationName}</p>
+                              <p
+                                className={classnames({
+                                  green: data.currentMode === "INVENTORY"
+                                })}
+                              >
+                                {data.currentMode}
+                              </p>
+                            </Link>
+                            <i
+                              className="fa fa-angle-down icon-pos"
+                              data-toggle="collapse"
+                              id={`#collapseId${index}`}
+                              href={`#collapseId${index}`}
+                              onClick={() => this.changeIcon(index)}
+                            />
+                          </div>
                         </div>
                       </div>
-                    </div>
+                    </Swipeout>
                     <div
                       data-parent="#accordion"
                       className="collapse media-details-collapse"
