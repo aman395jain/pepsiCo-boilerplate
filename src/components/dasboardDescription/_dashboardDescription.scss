@@ -1,69 +1,41 @@
 .dashboard-description {
-  margin-top: 50%;
-  padding: 20%;
-  font-size: 20px;
-  font-weight: bold;
-  .under-construction {
-    height: 100%;
-    width: 100%;
-  }
-  .racks-details {
-    height: 100px;
-    border: 7px solid black;
-    border-bottom: 0px;
-    .racks-autonomus {
-      background: white;
-      height: 100%;
-      box-shadow: inset 0px 0px 0px 14px #ece6e6;
-    }
-  }
-}
+  padding: 0px;
+  width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
 ul {
   background-image: url(http://lefft.com/img/shelf_960.png);
-  background-repeat: no-repeat;
-  background-position: bottom;
-  height: 100%;
-  padding: 0 0 33% 0px;
-  margin: 33% 0 0px 0;
-}
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    /* padding: 0 0 33% 0px; */
+    width: 122%;
+    display: flex;
+    margin-bottom: 50px;
+  .progress {
+    height: 8px;
+    margin-bottom: 5px;
+  }
 
-ul li.first,
-ul li:first-child {
-  margin-left: 7.5%;
+}
+ul:first-child{
+  margin-top: 40%;
 }
 
 ul li {
   position: relative;
   list-style-type: none;
   float: left;
-  margin-right: 7.5%;
-  bottom: 35px;
-  //   -o-box-shadow: 0px 2px 3px black;
-  //   box-shadow: 0px 2px 3px #000;
-  //   background-color: #000;
+  margin-right: 4.5%;
+  bottom: 70px;
   transition: all 0.2s ease;
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
   -ms-backface-visibility: hidden;
+  position:relative;
+        align-self: center;
   .images-logo {
     width: 80px;
   }
 }
-
-a:link,
-a:visited {
-  color: #ff3500;
-  -webkit-transition: color 0.3s ease;
-  -moz-transition: color 0.3s ease;
-  -o-transition: color 0.3s ease;
-  transition: color 0.3s ease;
-  text-decoration: none;
-  font-weight: bold;
-  display: block;
-}
-
-ul li h4 {
-  text-align: center;
-  display: none;
-  text-transform: uppercase;
 }
