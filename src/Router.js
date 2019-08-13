@@ -6,8 +6,6 @@ import { LoginPage } from "./components/login/loginPage";
 import ManagerDashboard from "./components/managerDashboard/managerDashboard";
 import { PrivateRoute } from "./containers/PrivateRoute";
 import { PageNotFound } from "./shared/error/PageNotFound";
-import Animations from "./components/animations/animations";
-import AccordionApp from "./components/accordion/AccordionApp";
 import DashbardDescription from "./components/dasboardDescription/dashboardDescription";
 import AddRack from "./components/addRacks/AddRack"
 import RemoveRacks from "./components/removeRacks/removeRacks"
@@ -22,8 +20,6 @@ const Router = (props) => (
     < Switch >
       <Route exact path="/" component={LoginPage} />
       <PrivateRoute exact path="/managerDashboard" component={ManagerDashboard} />
-      <PrivateRoute exact path="/animation" component={Animations} />
-      <PrivateRoute exact path="/accordion" component={AccordionApp} />
       <PrivateRoute exact path="/dashbardDescription" component={DashbardDescription} />
       <PrivateRoute exact path="/addRack" component={AddRack} />
       <PrivateRoute exact path="/removeRack" component={RemoveRacks} />
