@@ -8,10 +8,10 @@
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: cover;
-    /* padding: 0 0 33% 0px; */
-    width: 122%;
+    width: 125%;
     display: flex;
     margin-bottom: 50px;
+    padding-left: 20px;
     .progress {
       height: 8px;
       margin-bottom: 5px;
@@ -25,16 +25,13 @@
     position: relative;
     list-style-type: none;
     float: left;
-    margin-right: 4.5%;
-    bottom: 70px;
+    margin-right: 1%;
+    bottom: 75px;
     transition: all 0.2s ease;
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    -ms-backface-visibility: hidden;
     position: relative;
     align-self: center;
     border-right: 3px solid #2c2c2b;
-    padding: 0 10px;
+    padding: 0 12px;
     .images-logo {
       width: 80px;
     }
