@@ -35,8 +35,6 @@
     .images-logo {
       width: 80px;
     }
-    
-
   }
   ul li:last-child {
     border-right: none;
@@ -44,11 +42,12 @@
 }
 
 div.scrollmenu {
-  background-color: #FFF;
+  background-color: #fff;
   overflow: auto;
   white-space: nowrap;
-  margin-top: 60px;
+  margin-top: 75px;
   display: inline-grid;
+  margin-bottom: 50px;
 }
 
 div.scrollmenu a {
@@ -56,30 +55,36 @@ div.scrollmenu a {
   color: #000;
   text-align: center;
   text-decoration: none;
-      padding: 1px 14px 4px 14px;
-        border-right: 4px solid #444;
-    border-left: 4px solid #444;
-    margin: 0 -2px;
+  padding: 1px 3px 0px 3px;
+  border-right: 4px solid #444;
+  border-left: 4px solid #444;
+  margin: 0 -2px;
 }
 
 div.scrollmenu a:first-child {
-border-left: none;
+  border-left: none;
 }
 div.scrollmenu a:last-child {
-border-right: none;
+  border-right: none;
 }
 div.scrollmenu a img {
--moz-border-radius: 5px;
-border-radius: 5px;
--moz-box-shadow: 3px 5px 5px #444;
--webkit-box-shadow: 3px 5px 5px #444;
-box-shadow: 3px 5px 5px #444;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+
+  height: 90px;
+  // -moz-box-shadow: 3px 5px 5px #444;
+  // -webkit-box-shadow: 3px 5px 5px #444;
+  // box-shadow: 3px 5px 5px #444;
+  width: 100px;
 }
 .box-shadow {
-	border-bottom:14px solid #444;
-	margin-bottom:40px;
+  border-bottom: 14px solid #444;
+  margin-bottom: 25px;
 }
 .box-shadow1 {
-display: inline-block;
-
+  display: inline-block;
+}
+.progress {
+  height: 8px;
+  margin-bottom: 5px;
 }

@@ -12,206 +12,282 @@ import kettleLays from "../../assets/images/image/kettleLays.png";
 const DashboardDescription = () => {
   return (
     <div className="scrollmenu">
-        <div className="box-shadow">
-          <div className="box-shadow1">
-            <a href="#" className="photocard">
-              <img
-                src="https://raw.github.com/peterwestendorp/shelves/master/photos/3.jpg"
-                alt=""
+      <div className="box-shadow">
+        <div className="box-shadow1">
+          <a href="#" className="photocard">
+            <div className="progress">
+              <div
+                className="progress-bar progress-bar-striped bg-success"
+                role="progressbar"
+                style={{ width: "100%" }}
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
               />
-            </a>
-            <a href="#" data-img-url="../photos/1.jpg" className="photocard">
-              <img
-                src="https://raw.github.com/peterwestendorp/shelves/master/photos/1.jpg"
-                alt=""
+            </div>
+            <img src={laysLogo} alt="" />
+          </a>
+          <a href="#" data-img-url="../photos/1.jpg" className="photocard">
+            <div className="progress">
+              <div
+                className="progress-bar progress-bar-striped bg-success"
+                role="progressbar"
+                style={{ width: "50%" }}
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
               />
-            </a>
-            <a href="#" className="photocard">
-              <img
-                src="https://raw.github.com/peterwestendorp/shelves/master/photos/2.jpg"
-                alt=""
+            </div>
+            <img src={doritos} alt="" />
+          </a>
+          <a href="#" className="photocard">
+            <div className="progress">
+              <div
+                className="progress-bar progress-bar-striped bg-success"
+                role="progressbar"
+                style={{ width: "80%" }}
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
               />
-            </a>
-            <a href="#" className="photocard">
-              <img
-                src="https://raw.github.com/peterwestendorp/shelves/master/photos/3.jpg"
-                alt=""
+            </div>
+            <img src={cheetos} alt="" />
+          </a>
+          <a href="#" className="photocard">
+            <div className="progress">
+              <div
+                className="progress-bar progress-bar-striped bg-success"
+                role="progressbar"
+                style={{ width: "10%" }}
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
               />
-            </a>
-            <a href="#" data-img-url="../photos/1.jpg" className="photocard">
-              <img
-                src="https://raw.github.com/peterwestendorp/shelves/master/photos/1.jpg"
-                alt=""
+            </div>
+            <img src={redLays} alt="" />
+          </a>
+          <a href="#" data-img-url="../photos/1.jpg" className="photocard">
+            <div className="progress">
+              <div
+                className="progress-bar progress-bar-striped bg-success"
+                role="progressbar"
+                style={{ width: "40%" }}
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
               />
-            </a>
-            <a href="#" className="photocard">
-              <img
-                src="https://raw.github.com/peterwestendorp/shelves/master/photos/2.jpg"
-                alt=""
-              />
-            </a>
-            <a href="#" className="photocard">
-              <img
-                src="https://raw.github.com/peterwestendorp/shelves/master/photos/3.jpg"
-                alt=""
-              />
-            </a>
-            <a href="#" data-img-url="../photos/1.jpg" className="photocard">
-              <img
-                src="https://raw.github.com/peterwestendorp/shelves/master/photos/1.jpg"
-                alt=""
-              />
-            </a>
-            <a href="#" className="photocard">
-              <img
-                src="https://raw.github.com/peterwestendorp/shelves/master/photos/2.jpg"
-                alt=""
-              />
-            </a>
-            <a href="#" className="photocard">
-              <img
-                src="https://raw.github.com/peterwestendorp/shelves/master/photos/3.jpg"
-                alt=""
-              />
-            </a>
-            <a href="#" data-img-url="../photos/1.jpg" className="photocard">
-              <img
-                src="https://raw.github.com/peterwestendorp/shelves/master/photos/1.jpg"
-                alt=""
-              />
-            </a>
-            <a href="#" className="photocard">
-              <img
-                src="https://raw.github.com/peterwestendorp/shelves/master/photos/2.jpg"
-                alt=""
-              />
-            </a>
-            <a href="#" className="photocard">
-              <img
-                src="https://raw.github.com/peterwestendorp/shelves/master/photos/3.jpg"
-                alt=""
-              />
-            </a>
-            <a href="#" data-img-url="../photos/1.jpg" className="photocard">
-              <img
-                src="https://raw.github.com/peterwestendorp/shelves/master/photos/1.jpg"
-                alt=""
-              />
-            </a>
-            <a href="#" className="photocard">
-              <img
-                src="https://raw.github.com/peterwestendorp/shelves/master/photos/2.jpg"
-                alt=""
-              />
-            </a>
-            <a href="#" className="photocard">
-              <img
-                src="https://raw.github.com/peterwestendorp/shelves/master/photos/3.jpg"
-                alt=""
-              />
-            </a>
-          </div>
+            </div>
+            <img src={kettleLays} alt="" />
+          </a>
         </div>
-        <div className="box-shadow">
-          <div className="box-shadow1">
-            <a href="#" className="photocard">
-              <img
-                src="https://raw.github.com/peterwestendorp/shelves/master/photos/3.jpg"
-                alt=""
+      </div>
+      <div className="box-shadow">
+        <div className="box-shadow1">
+          <a href="#" className="photocard">
+            <div className="progress">
+              <div
+                className="progress-bar progress-bar-striped bg-success"
+                role="progressbar"
+                style={{ width: "50%" }}
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
               />
-            </a>
-            <a href="#" data-img-url="../photos/1.jpg" className="photocard">
-              <img
-                src="https://raw.github.com/peterwestendorp/shelves/master/photos/1.jpg"
-                alt=""
+            </div>
+            <img src={doritos} alt="" />
+          </a>
+          <a href="#" data-img-url="../photos/1.jpg" className="photocard">
+            <div className="progress">
+              <div
+                className="progress-bar progress-bar-striped bg-success"
+                role="progressbar"
+                style={{ width: "40%" }}
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
               />
-            </a>
-            <a href="#" className="photocard">
-              <img
-                src="https://raw.github.com/peterwestendorp/shelves/master/photos/2.jpg"
-                alt=""
+            </div>
+            <img src={laysLogo} alt="" />
+          </a>
+          <a href="#" className="photocard">
+            <div className="progress">
+              <div
+                className="progress-bar progress-bar-striped bg-success"
+                role="progressbar"
+                style={{ width: "20%" }}
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
               />
-            </a>
-            <a href="#" className="photocard">
-              <img
-                src="https://raw.github.com/peterwestendorp/shelves/master/photos/3.jpg"
-                alt=""
+            </div>
+            <img src={kettleLays} alt="" />
+          </a>
+          <a href="#" className="photocard">
+            <div className="progress">
+              <div
+                className="progress-bar progress-bar-striped bg-success"
+                role="progressbar"
+                style={{ width: "66%" }}
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
               />
-            </a>
-            <a href="#" data-img-url="../photos/1.jpg" className="photocard">
-              <img
-                src="https://raw.github.com/peterwestendorp/shelves/master/photos/1.jpg"
-                alt=""
+            </div>
+            <img src={redLays} alt="" />
+          </a>
+          <a href="#" data-img-url="../photos/1.jpg" className="photocard">
+            <div className="progress">
+              <div
+                className="progress-bar progress-bar-striped bg-success"
+                role="progressbar"
+                style={{ width: "33%" }}
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
               />
-            </a>
-            <a href="#" className="photocard">
-              <img
-                src="https://raw.github.com/peterwestendorp/shelves/master/photos/2.jpg"
-                alt=""
-              />
-            </a>
-            <a href="#" className="photocard">
-              <img
-                src="https://raw.github.com/peterwestendorp/shelves/master/photos/3.jpg"
-                alt=""
-              />
-            </a>
-            <a href="#" data-img-url="../photos/1.jpg" className="photocard">
-              <img
-                src="https://raw.github.com/peterwestendorp/shelves/master/photos/1.jpg"
-                alt=""
-              />
-            </a>
-            <a href="#" className="photocard">
-              <img
-                src="https://raw.github.com/peterwestendorp/shelves/master/photos/2.jpg"
-                alt=""
-              />
-            </a>
-            <a href="#" className="photocard">
-              <img
-                src="https://raw.github.com/peterwestendorp/shelves/master/photos/3.jpg"
-                alt=""
-              />
-            </a>
-            <a href="#" data-img-url="../photos/1.jpg" className="photocard">
-              <img
-                src="https://raw.github.com/peterwestendorp/shelves/master/photos/1.jpg"
-                alt=""
-              />
-            </a>
-            <a href="#" className="photocard">
-              <img
-                src="https://raw.github.com/peterwestendorp/shelves/master/photos/2.jpg"
-                alt=""
-              />
-            </a>
-            <a href="#" className="photocard">
-              <img
-                src="https://raw.github.com/peterwestendorp/shelves/master/photos/3.jpg"
-                alt=""
-              />
-            </a>
-            <a href="#" data-img-url="../photos/1.jpg" className="photocard">
-              <img
-                src="https://raw.github.com/peterwestendorp/shelves/master/photos/1.jpg"
-                alt=""
-              />
-            </a>
-            <a href="#" className="photocard">
-              <img
-                src="https://raw.github.com/peterwestendorp/shelves/master/photos/2.jpg"
-                alt=""
-              />
-            </a>
-            <a href="#" className="photocard">
-              <img
-                src="https://raw.github.com/peterwestendorp/shelves/master/photos/3.jpg"
-                alt=""
-              />
-            </a>
-          </div>
+            </div>
+            <img src={cheetos} alt="" />
+          </a>
         </div>
+      </div>
+      <div className="box-shadow">
+        <div className="box-shadow1">
+          <a href="#" className="photocard">
+            <div className="progress">
+              <div
+                className="progress-bar progress-bar-striped bg-success"
+                role="progressbar"
+                style={{ width: "66%" }}
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              />
+            </div>
+            <img src={laysLogo} alt="" />
+          </a>
+          <a href="#" data-img-url="../photos/1.jpg" className="photocard">
+            <div className="progress">
+              <div
+                className="progress-bar progress-bar-striped bg-success"
+                role="progressbar"
+                style={{ width: "77%" }}
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              />
+            </div>
+            <img src={cheetos} alt="" />
+          </a>
+          <a href="#" className="photocard">
+            <div className="progress">
+              <div
+                className="progress-bar progress-bar-striped bg-success"
+                role="progressbar"
+                style={{ width: "44%" }}
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              />
+            </div>
+            <img src={doritos} alt="" />
+          </a>
+          <a href="#" className="photocard">
+            <div className="progress">
+              <div
+                className="progress-bar progress-bar-striped bg-success"
+                role="progressbar"
+                style={{ width: "70%" }}
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              />
+            </div>
+            <img src={kettleLays} alt="" />
+          </a>
+          <a href="#" data-img-url="../photos/1.jpg" className="photocard">
+            <div className="progress">
+              <div
+                className="progress-bar progress-bar-striped bg-success"
+                role="progressbar"
+                style={{ width: "60%" }}
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              />
+            </div>
+            <img src={redLays} alt="" />
+          </a>
+        </div>
+      </div>
+      <div className="box-shadow">
+        <div className="box-shadow1">
+          <a href="#" className="photocard">
+            <div className="progress">
+              <div
+                className="progress-bar progress-bar-striped bg-success"
+                role="progressbar"
+                style={{ width: "100%" }}
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              />
+            </div>
+            <img src={kettleLays} alt="" />
+          </a>
+          <a href="#" data-img-url="../photos/1.jpg" className="photocard">
+            <div className="progress">
+              <div
+                className="progress-bar progress-bar-striped bg-success"
+                role="progressbar"
+                style={{ width: "100%" }}
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              />
+            </div>
+            <img src={doritos} alt="" />
+          </a>
+          <a href="#" className="photocard">
+            <div className="progress">
+              <div
+                className="progress-bar progress-bar-striped bg-success"
+                role="progressbar"
+                style={{ width: "100%" }}
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              />
+            </div>
+            <img src={redLays} alt="" />
+          </a>
+          <a href="#" className="photocard">
+            <div className="progress">
+              <div
+                className="progress-bar progress-bar-striped bg-success"
+                role="progressbar"
+                style={{ width: "100%" }}
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              />
+            </div>
+            <img src={cheetos} alt="" />
+          </a>
+          <a href="#" data-img-url="../photos/1.jpg" className="photocard">
+            <div className="progress">
+              <div
+                className="progress-bar progress-bar-striped bg-success"
+                role="progressbar"
+                style={{ width: "100%" }}
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              />
+            </div>
+            <img src={laysLogo} alt="" />
+          </a>
+        </div>
+      </div>
       {/* </div> */}
       {/* <Header isAuthorized="true" />
       <div className="container dashboard-description">
