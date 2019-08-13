@@ -10,10 +10,11 @@ export const userAuthActions = {
 
 function login(username, password) {
   return dispatch => {
-    dispatch(request({ username }));
+
     authService.login(username, password).then(
       user => {
         if (user) {
+          dispatch(request({ username }));
           history.push("/managerDashboard")
         } else {
           dispatch(alertActions.error("Invalid Login Details."));

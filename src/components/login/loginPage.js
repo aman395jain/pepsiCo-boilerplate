@@ -39,7 +39,7 @@ class LoginPage extends Component {
 
       //const loggendInStatus = await authService.login(this.loginForm.value);
       var loggendInStatus = await this.props.userLogin(this.loginForm.value.username, this.loginForm.value.password);
-      console.log("loggendInStatus :::::::::::::::", loggendInStatus)
+
       if (loggendInStatus === true) {
         this.props.history.push('/managerDashboard')
       } else {

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import classnames from "classnames";
-import Swipeout from "rc-swipeout";
+import Swipeout from 'rc-swipeout'
 import "rc-swipeout/assets/index.css";
 
 import { rackData } from "../../assets/constants/_mockRackData";
@@ -11,7 +11,6 @@ import "./_removeRacks.scss";
 class RemoveRacks extends Component {
   state = {
     openDiv: false,
-    isLogin: true,
     arrowClass: "fa fa-angle-down",
     isActive: false,
     _rackData: []

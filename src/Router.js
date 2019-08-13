@@ -33,6 +33,8 @@ const Router = (props) => (
 );
 
 function mapStateToProps(state) {
+  console.log("Router mapStateToProps state authentication in router..................")
+  console.log("state.authentication", state.authentication)
   const { authentication } = state;
   return {
     authentication
