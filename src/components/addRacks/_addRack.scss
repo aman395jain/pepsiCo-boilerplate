@@ -3,19 +3,13 @@
   .add-racks {
     overflow-y: auto;
     margin-top: 10%;
-    .vending-machine {
-      height: 100px;
-      width: 100px;
-      background: #fff;
-      border-radius: 50%;
+    .vending-machine-image {
+      height: 95px;
       display: block;
       margin: auto;
-      .vending-machine-image {
-        height: 92px;
-        display: block;
-        margin: auto;
-        padding: 7px 0px 1px 0;
-      }
+      /* padding: 7px 0px 1px 0; */
+      border-radius: 50%;
+      width: 95px;
     }
     .media {
       font-size: 19px;
@@ -24,25 +18,33 @@
       align-items: inherit;
       flex-flow: wrap;
       .media-body {
-        .add-racks-content {
+        // .add-racks-content {
+        //   height: 60px;
+        //   display: flex;
+        //   align-items: center;
+        .add-racks-content-row {
+          // width: 50%;
+          margin: 7% 0;
+          input {
+            height: 45px;
+          }
+          .add-racks-content-data {
+            border: none;
+            background: #e8f0f3;
+            border-bottom: 1px solid;
+            border-radius: 0 !important;
+          }
+        }
+        .add-racks-button {
           height: 60px;
           display: flex;
           align-items: center;
-          .add-racks-content-row {
-            width: 50%;
-            margin-bottom: 0 !important;
-            .add-racks-content-data {
-              border: none;
-              background: #e8f0f3;
-              border-bottom: 1px solid;
-              border-radius: 0 !important;
-            }
-          }
           .add-racks-button-row {
             margin: 7%;
             width: 50%;
           }
         }
+        // }
       }
     }
   }

@@ -7,11 +7,18 @@ import VendingMachine from "../../assets/images/Rack_Image.png";
 class AddRack extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      username: "",
-      password: "",
-      submitted: false
-    };
+    this.state = {};
+  }
+
+  buildFileSelector() {
+    const fileSelector = document.createElement("input");
+    fileSelector.setAttribute("type", "file");
+    fileSelector.setAttribute("multiple", "multiple");
+    return fileSelector;
+  }
+
+  componentDidMount() {
+    this.fileSelector = this.buildFileSelector();
   }
 
   handleSubmit(e) {
@@ -25,47 +32,42 @@ class AddRack extends Component {
     this.props.history.push("/managerDashboard");
   };
 
+  newImage = e => {
+    e.preventDefault();
+    this.fileSelector.click();
+  };
+
   render() {
     return (
       <React.Fragment>
         <div className="add-rack-top">
           <InternalHeader />
           <div className="container add-racks">
-            <div className="vending-machine">
-              <img className="vending-machine-image" src={VendingMachine} />
-            </div>
             <form name="form" onSubmit={this.handleSubmit}>
+              <img
+                ref="fileUploader"
+                className="vending-machine-image"
+                src={VendingMachine}
+                onClick={this.newImage}
+              />
+
               <div className="media">
                 <div className="media-body">
-                  <div className="add-racks-content">
-                    <label className="add-racks-content-row">Rack Image:</label>
-                    <div className="add-racks-content-row">
-                      <i className="fa fa-upload" aria-hidden="true" />
-                    </div>
+                  <div className="add-racks-content-row">
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Please enter Rack ID"
+                    />
                   </div>
-                  <div className="add-racks-content">
-                    <label className="add-racks-content-row">Rack ID:</label>
-                    <div className="add-racks-content-row">
-                      <input
-                        type="text"
-                        className="form-control add-racks-content-data"
-                        placeholder="ID"
-                      />
-                    </div>
+                  <div className="add-racks-content-row">
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Please enter Rack Location"
+                    />
                   </div>
-                  <div className="add-racks-content">
-                    <label className="add-racks-content-row">
-                      Rack Location:
-                    </label>
-                    <div className="add-racks-content-row">
-                      <input
-                        type="text"
-                        className="form-control add-racks-content-data"
-                        placeholder="Location"
-                      />
-                    </div>
-                  </div>
-                  <div className="mt-3 add-racks-content">
+                  <div className="mt-3 add-racks-button">
                     <button className="btn btn-outline-primary add-racks-button-row">
                       Save
                     </button>
