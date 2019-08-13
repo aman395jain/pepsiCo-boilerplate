@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import InternalHeader from "../../shared/internalHeader/internal-header";
 
 import "./_addRack.scss";
-import Header from "../../shared/header/header";
-import Footer from "../../shared/footer/footer";
 import VendingMachine from "../../assets/images/Rack_Image.png";
 
 class AddRack extends Component {
@@ -30,7 +28,6 @@ class AddRack extends Component {
   render() {
     return (
       <React.Fragment>
-        <Header isAuthorized="false" />
         <div className="add-rack-top">
           <InternalHeader />
           <div className="container add-racks">
@@ -84,7 +81,6 @@ class AddRack extends Component {
             </form>
           </div>
         </div>
-        <Footer isAuthorized="false" />
       </React.Fragment>
     );
   }

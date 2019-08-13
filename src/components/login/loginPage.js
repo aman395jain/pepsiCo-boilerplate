@@ -18,9 +18,6 @@ import * as constant from "../../assets/constants/validations-constant";
 import { userAuthActions, footerActions, alertActions } from "../../actions/index"
 import facebookLogo from "../../assets/images/facebook_button.png";
 import googleLogo from "../../assets/images/google_logo.jpg";
-import Header from "../../shared/header/header"
-import Footer from "../../shared/footer/footer"
-
 class LoginPage extends Component {
   constructor(props) {
     super(props);
@@ -77,7 +74,6 @@ class LoginPage extends Component {
     //console.log("this.state.type", this.state.type);
     return (
       <div>
-        <Header isAuthorized={this.state.isLogin} />
         <div className="container login-bg ">
           <div className="row login-main">
             <div className="col-lg-4" />
@@ -187,7 +183,6 @@ class LoginPage extends Component {
             <div className="col-lg-4 car-image" />
           </div>
         </div>
-        <Footer isAuthorized={this.state.isLogin} />
       </div>
     );
   }

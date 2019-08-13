@@ -5,8 +5,6 @@ import "rc-swipeout/assets/index.css";
 
 import { rackData } from "../../assets/constants/_mockRackData";
 import rackImage from "../../assets/images/vending.jpg";
-import Header from "../../shared/header/header";
-import Footer from "../../shared/footer/footer";
 import InternalHeader from "../../shared/internalHeader/internal-header";
 import "./_removeRacks.scss";
 
@@ -34,7 +32,6 @@ class RemoveRacks extends Component {
     return (
       <React.Fragment>
         <div>
-          <Header isAuthorized={this.state.isLogin} />
           <div className="remove-dashboard">
             <InternalHeader />
             {this.state._rackData.map((data, index) => {
@@ -80,7 +77,6 @@ class RemoveRacks extends Component {
               );
             })}
           </div>
-          <Footer isAuthorized={this.state.isLogin} />
         </div>
       </React.Fragment>
     );

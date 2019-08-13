@@ -5,8 +5,6 @@ import classnames from "classnames";
 import "./managerDashboard.scss";
 // import rackImage from "../../assets/images/Rack_Image.png";
 import rackImage from "../../assets/images/vending.jpg";
-import Header from "../../shared/header/header";
-import Footer from "../../shared/footer/footer";
 import InternalHeader from "../../shared/internalHeader/internal-header";
 import { rackDataService } from "../../services/rackData.service";
 import { rackData } from "../../assets/constants/_mockRackData";
@@ -56,7 +54,6 @@ class ManagerDashboard extends Component {
     return (
       <React.Fragment>
         <div>
-          <Header isAuthorized={this.state.isLogin} />
           <div className="manager-dashboard">
             <InternalHeader />
             <div id="accordion">
@@ -117,7 +114,6 @@ class ManagerDashboard extends Component {
               })}
             </div>
           </div>
-          <Footer isAuthorized={this.state.isLogin} />
         </div>
       </React.Fragment>
     );
