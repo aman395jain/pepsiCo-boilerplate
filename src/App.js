@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import { Router } from "react-router-dom";
-// import { NavLink } from "react-router-dom";
-// import Header from "./shared/header/header";
 
 import Route from "./Router";
 import { history } from "./helpers/history";
@@ -13,13 +11,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     history.listen((location, action) => {
-      console.log("History Location......", location);
-      console.log("Action Location.......", action);
-      console.log("PASS history location..........")
-      // clear alert on location change
       this.props.clearAlerts();
     });
-
   }
 
 
@@ -51,7 +44,6 @@ function mapStateToProps(state) {
 const actionCreators = {
   clearAlerts: alertActions.clear
 };
-
 
 const connectedApp = connect(mapStateToProps, actionCreators)(App);
 export { connectedApp as App };

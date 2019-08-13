@@ -1,15 +1,21 @@
 import { Component } from "react";
-import { authService } from "../../services/authService";
+import { connect } from 'react-redux';
+
+import { userAuthActions } from "../../actions/authAcions"
 
 class LogoutPage extends Component {
   componentDidMount() {
-    authService.logout();
+    this.props.logout();
     this.props.history.push("/");
   }
-
   render() {
     return null;
   }
 }
 
-export default LogoutPage;
+const actionCreators = {
+  logout: userAuthActions.logout
+};
+
+
+export default connect(null, actionCreators)(LogoutPage);
