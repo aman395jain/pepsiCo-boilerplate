@@ -9,7 +9,7 @@ import "./managerDashboard.scss";
 import rackImage from "../../assets/images/vending.jpg";
 import InternalHeader from "../../shared/internalHeader/internal-header";
 import { rackDataService } from "../../services/rackData.service";
-import { rackData } from "../../assets/constants/_mockRackData";
+// import { rackData } from "../../assets/constants/_mockRackData";
 
 class ManagerDashboard extends Component {
   state = {
@@ -25,14 +25,14 @@ class ManagerDashboard extends Component {
     
   } */
   componentDidMount() {
-    // rackDataService.rackData().then(result => {
-    //   this.setState({
-    //     _rackData: result.data
-    //   });
-    // });
-    this.setState({
-      _rackData: rackData
+    rackDataService.getAllRacks().then(result => {
+      this.setState({
+        _rackData: result.data
+      });
     });
+    /* this.setState({
+      _rackData: rackData
+    }); */
   }
 
   displayDivData = () => {
@@ -114,10 +114,10 @@ class ManagerDashboard extends Component {
                       id={`collapseId${index}`}
                     >
                       <div className="">
-                        <p>Store ID: {data.store.id}</p>
-                        <p>Store Name :{data.store.name}</p>
+                        <p>Store ID: {data.store && data.store.id}</p>
+                        <p>Store Name :{data.store && data.store.name}</p>
                         <p>
-                          Quantities in Stock : {data.store.quantityInStocks}
+                          Quantities in Stock : {data.store && data.store.quantityInStocks}
                         </p>
                       </div>
                     </div>
