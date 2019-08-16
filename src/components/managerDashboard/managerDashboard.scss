@@ -8,7 +8,7 @@
     background: #fff;
     transition: all 0.3s;
     margin-top: 15px;
-    background: #fffee8;
+    // background: #fffee8;
     .media-details-collapse {
       padding: 10px;
       margin: 10px 10px 0;
@@ -104,4 +104,8 @@
   height: 98%;
   top: 1%;
   right: 1%;
+}
+
+.flippy-card {
+  padding: 0 !important;
 }

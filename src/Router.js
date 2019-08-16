@@ -11,6 +11,7 @@ import AddRack from "./components/addRacks/AddRack"
 import Logout from "./components/logout/logoutPage";
 import MyAccount from "./components/myAccount/myAccount"
 import Header from "./shared/header/header"
+import RemoveRacks from "./components/removeRacks/removeRacks"
 import Footer from "./shared/footer/footer"
 
 const Router = (props) => (
@@ -21,6 +22,7 @@ const Router = (props) => (
       <PrivateRoute exact path="/managerDashboard" component={ManagerDashboard} />
       <PrivateRoute exact path="/dashbardDescription" component={DashbardDescription} />
       <PrivateRoute exact path="/addRack" component={AddRack} />
+      <PrivateRoute exact path="/removeRack" component={RemoveRacks} />
       <Route exact path="/loginPage" component={LoginPage} />
       <PrivateRoute exact path="/logoutPage" component={Logout} />
       <PrivateRoute exact path="/myAccount" component={MyAccount} />

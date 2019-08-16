@@ -17,6 +17,7 @@
     "react-animations": "^1.0.0",
     "react-bootstrap": "^0.32.4",
     "react-dom": "^16.8.4",
+    "react-flippy": "^0.1.5",
     "react-reactive-form": "^1.0.28",
     "react-redux": "^6.0.1",
     "react-router-dom": "^4.3.1",
