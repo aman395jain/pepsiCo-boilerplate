@@ -10,8 +10,10 @@ import DashbardDescription from "./components/dasboardDescription/dashboardDescr
 import AddRack from "./components/addRacks/AddRack"
 import Logout from "./components/logout/logoutPage";
 import MyAccount from "./components/myAccount/myAccount"
+import ReviewOrder from "./components/reviewOrder/reviewOrder"
 import Header from "./shared/header/header"
 import RemoveRacks from "./components/removeRacks/removeRacks"
+import Products from "./components/products/products"
 import Footer from "./shared/footer/footer"
 
 const Router = (props) => (
@@ -22,10 +24,11 @@ const Router = (props) => (
       <PrivateRoute exact path="/managerDashboard" component={ManagerDashboard} />
       <PrivateRoute exact path="/dashbardDescription" component={DashbardDescription} />
       <PrivateRoute exact path="/addRack" component={AddRack} />
-      <PrivateRoute exact path="/removeRack" component={RemoveRacks} />
+      <PrivateRoute exact path="/reviewOrder" component={ReviewOrder} />
       <Route exact path="/loginPage" component={LoginPage} />
       <PrivateRoute exact path="/logoutPage" component={Logout} />
       <PrivateRoute exact path="/myAccount" component={MyAccount} />
+      <PrivateRoute exact path="/products" component={Products} />
       <Route component={PageNotFound} />
     </Switch >
     <Footer isAuthorized={props.authentication.loggedIn} />

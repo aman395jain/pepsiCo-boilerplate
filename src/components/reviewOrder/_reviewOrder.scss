@@ -1,0 +1,102 @@
+.remove-dashboard {
+    overflow-y: auto;
+    // background-color: #e8e5e5;
+    padding-bottom: 15%;
+    margin-top: 56px;
+    .media-wrapper {
+      margin-bottom: 10px;
+      background: #fff;
+      transition: all 0.3s;
+      margin-top: 15px;
+      .media-details-collapse {
+        padding: 10px;
+        margin: 10px 10px 0;
+        background: #9dcae0;
+        border-radius: 3px 3px 0 0;
+        position: relative;
+        bottom: 10px;
+        p {
+          margin-bottom: 5px;
+          color: #000;
+        }
+      }
+      &.active {
+        .media {
+          border-bottom: 0;
+        }
+        .media-body {
+          &::after {
+            background: transparent;
+            border-left: 0;
+          }
+        }
+      }
+    }
+    .media {
+      background-color: #ffffff;
+      padding: 10px 0;
+      border-bottom: 1px solid #e0e0e0;
+      flex: 1;
+      padding-right: 30px;
+      align-items: inherit;
+      flex-flow: wrap;
+      .content-center {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+      }
+      
+      .thumb-img {
+        width: 100px;
+      }
+      
+      .media-body {
+        position: relative;
+        &::after {
+          content: none;
+          width: 30px;
+          background: #efefef;
+          position: absolute;
+          top: -10px;
+          right: -30px;
+          bottom: -10px;
+          border-left: 1px solid #d8d8d8;
+      }
+        strong {
+          font-size: 18px;
+          color: #000;
+          
+        }
+        .green {
+          color: #54b226;
+          font-weight: 500;
+        }
+        .red {
+          font-weight: 500;
+          color: #ff690d;
+        }
+        p{
+          margin-bottom:5px;
+          color: #666;
+        }
+        .icon-pos {
+          color: #ff690d;
+          position: absolute;
+          top: 50%;
+          -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+          right: -20px;
+        }
+        a {
+          color : inherit;
+        }
+      }   
+    }
+  }
+
+  .rc-swipeout-actions {
+    height: 98%;
+    top: 1%;
+    right: 1%;
+  }
