@@ -14,7 +14,8 @@ import ReviewOrder from "./components/reviewOrder/reviewOrder"
 import Header from "./shared/header/header"
 import RemoveRacks from "./components/removeRacks/removeRacks"
 import Products from "./components/products/products"
-import Footer from "./shared/footer/footer"
+import Footer from "./shared/footer/footer";
+import CartReview from "./components/cartReview/cartReview"
 
 const Router = (props) => (
   < React.Fragment >
@@ -29,6 +30,7 @@ const Router = (props) => (
       <PrivateRoute exact path="/logoutPage" component={Logout} />
       <PrivateRoute exact path="/myAccount" component={MyAccount} />
       <PrivateRoute exact path="/products" component={Products} />
+      <PrivateRoute exact path="/cartReview" component={CartReview} />
       <Route component={PageNotFound} />
     </Switch >
     <Footer isAuthorized={props.authentication.loggedIn} />

@@ -78,17 +78,29 @@ class ManagerDashboard extends Component {
                             >
                               {data.currentMode}
                             </p>
-                            <Link to="/dashbardDescription">
+                            {/* <Link to="/dashbardDescription">
                               <i className="fa fa-caret-right icon-pos" />
-                            </Link>
+                            </Link> */}
                           </div>
                         </div>
                       </div>
                     </FrontSide>
-                    <BackSide style={{ backgroundColor: "#175852" }}>
-                      ROCKS
+                    <BackSide>
+                      <div className="backside-dashboard">
+                        <div className="backside-dashboard1">
+                          <strong>{data.rackStatuses[0]}</strong>
+                          <p>{data.shortDescription}</p>
+                          <p>{data.longDescription}</p>
+                        </div>
+                      </div>
                     </BackSide>
                   </Flippy>
+
+                  <div className="dashboard-link">
+                    <Link to="/dashbardDescription">
+                      <i className="fa fa-caret-right icon-pos" />
+                    </Link>
+                  </div>
                 </div>
               );
             })}

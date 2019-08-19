@@ -4,24 +4,38 @@
   padding-bottom: 15%;
   margin-top: 56px;
   .media-wrapper {
+    display: flex;
     margin-bottom: 10px;
     background: #fff;
     transition: all 0.3s;
     margin-top: 15px;
     // background: #fffee8;
-    .media-details-collapse {
-      padding: 10px;
-      margin: 10px 10px 0;
-      border-radius: 5px;
+    .flippy-container {
+      width: 90%;
+    }
+    .dashboard-link {
+      width: 10%;
       position: relative;
-      bottom: 10px;
-      border: 1px solid lightgray;
-      background: #fff;
-      p {
-        margin-bottom: 5px;
-        color: #000;
+      .icon-pos {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        color: #f3300f;
       }
     }
+    // .media-details-collapse {
+    //   padding: 10px;
+    //   margin: 10px 10px 0;
+    //   border-radius: 5px;
+    //   position: relative;
+    //   bottom: 10px;
+    //   border: 1px solid lightgray;
+    //   background: #fff;
+    //   p {
+    //     margin-bottom: 5px;
+    //     color: #000;
+    //   }
+    // }
     &.active {
       .media {
         border-bottom: 0;
@@ -60,7 +74,7 @@
     .media-body {
       position: relative;
       &::after {
-        content: "";
+        //content: "";
         width: 30px;
         background: #f7f7f7;
         position: absolute;
@@ -98,6 +112,17 @@
       }
     }
   }
+  .backside-dashboard {
+    height: 100%;
+    .backside-dashboard1 {
+      margin: 8%;
+      border: 1px solid #ebebeb;
+      padding: 4%;
+      border-radius: 5px;
+    }
+  }
+
+  
 }
 
 .rc-swipeout-actions {
