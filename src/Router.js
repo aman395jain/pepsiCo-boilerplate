@@ -24,11 +24,11 @@ const Router = (props) => (
     <Header isAuthorized={props.authentication.loggedIn}></Header>
     < Switch >
       <Route exact path="/" component={LoginPage} />
+      <Route exact path="/loginPage" component={LoginPage} />
       <PrivateRoute exact path="/managerDashboard" component={ManagerDashboard} />
       <PrivateRoute exact path="/dashbardDescription" component={DashbardDescription} />
       <PrivateRoute exact path="/addRack" component={AddRack} />
       <PrivateRoute exact path="/reviewOrder" component={ReviewOrder} />
-      <Route exact path="/loginPage" component={LoginPage} />
       <PrivateRoute exact path="/logoutPage" component={Logout} />
       <PrivateRoute exact path="/myAccount" component={MyAccount} />
       <PrivateRoute exact path="/products" component={Products} />
