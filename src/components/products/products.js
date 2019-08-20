@@ -62,7 +62,7 @@ class Products extends Component {
                             return (
                                 <div key={index} className={classnames("media-wrapper", { 'active': this.state.isActive })}>
                                     <div className="media rack-content" style={{ paddingRight: "0" }}>
-                                        <Link to="/dashbardDescription"><img src={laysLogo} className="mr-3 thumb-img" alt="..." /></Link>
+                                        <Link to="/dashbardDescription"><img height="90" src={laysLogo} className="mr-3 thumb-img" alt="..." /></Link>
                                         <div className="media-body">
                                             <div className="content-center">
                                                 <Link to="/dashbardDescription">
