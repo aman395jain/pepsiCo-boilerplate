@@ -9,6 +9,7 @@ import InternalHeader from "../../shared/internalHeader/internal-header";
 import { rackDataService } from "../../services/rackData.service";
 import { rackData } from "../../assets/constants/_mockRackData";
 import Flippy, { FrontSide, BackSide } from "react-flippy";
+import Spinner from "../../shared/spinner/spinner"
 
 class ManagerDashboard extends Component {
   constructor(props) {
@@ -42,11 +43,13 @@ class ManagerDashboard extends Component {
   };
 
   render() {
+    const { _rackData } = this.state;
+    console.log("Rack Data :::::::: ", _rackData)
     return (
       <React.Fragment>
         <div>
           <div className="manager-dashboard">
-            {this.state._rackData.map((data, index) => {
+            {_rackData.length === 0 ? <Spinner /> : _rackData.map((data, index) => {
               return (
                 <div
                   className={classnames("media-wrapper", {
@@ -102,7 +105,7 @@ class ManagerDashboard extends Component {
                     </Link>
                   </div>
                 </div>
-              );
+              )
             })}
           </div>
         </div>
