@@ -12,7 +12,6 @@ import Logout from "./components/logout/logoutPage";
 import MyAccount from "./components/myAccount/myAccount"
 import ReviewOrder from "./components/reviewOrder/reviewOrder"
 import Header from "./shared/header/header"
-import RemoveRacks from "./components/removeRacks/removeRacks"
 import Products from "./components/products/products"
 import Footer from "./shared/footer/footer";
 import CartReview from "./components/cartReview/cartReview";

@@ -3,9 +3,17 @@ import Swipeout from "rc-swipeout";
 import "rc-swipeout/assets/index.css";
 
 import "./_cartReview.scss";
-import rackImage from "../../assets/images/vending.jpg";
+import { rackData } from "../../assets/constants/_mockRackData";
+import rackImage from "../../assets/images/lays.png";
 
 class CartReview extends Component {
+  state = { _rackData: [] };
+
+  componentDidMount() {
+    this.setState({
+      _rackData: rackData
+    });
+  }
   approveOrder() {
     console.log("Approve");
   }
@@ -17,28 +25,59 @@ class CartReview extends Component {
   render() {
     return (
       <div className="cart-review">
-        <Swipeout
-          right={[
-            {
-              text: "Approve",
-              onPress: () => {
-                this.approveOrder();
-              },
-              style: { backgroundColor: "green", color: "white" },
-              className: "custom-class-1"
-            },
-            {
-              text: "Reject",
-              onPress: () => console.log("delete"),
-              style: { backgroundColor: "red", color: "white" },
-              className: "custom-class-2"
-            }
-          ]}
-          onOpen={() => console.log("open")}
-          onClose={() => console.log("close")}
-        >
-          <div style={{ height: 44 }}> swipeout demo </div>
-        </Swipeout>
+        {this.state._rackData.map((data, index) => {
+          return data.approvedStatus !== "approved" ? (
+            <Swipeout
+              right={[
+                {
+                  text: "Approve",
+                  onPress: () => {
+                    this.approveOrder();
+                  },
+                  style: { backgroundColor: "#54b226", color: "white" },
+                  className: "custom-class-1"
+                },
+                {
+                  text: "Reject",
+                  onPress: () => {
+                    this.rejectOrder();
+                  },
+                  style: { backgroundColor: "#ff690d", color: "white" },
+                  className: "custom-class-2"
+                }
+              ]}
+              key={index}
+            >
+              <div style={{ height: 120 }}>
+                <div className="media rack-content">
+                  <img src={rackImage} className="mr-3 thumb-img" alt="..." />
+
+                  <div className="media-body">
+                    <div className="content-center">
+                      <strong>{data.name}</strong>
+                      <p>{data.locationName}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Swipeout>
+          ) : (
+            <div key={index} style={{ height: 120, marginTop: 10 }}>
+              <div className="media rack-content">
+                <img src={rackImage} className="mr-3 thumb-img" alt="..." />
+
+                <div className="media-body">
+                  <div className="content-center">
+                    <strong>{data.name}</strong>
+                    <p>{data.locationName}</p>
+                  </div>
+                  <button className = "btn btn-success btn-approved"></button>
+                </div>
+
+              </div>
+            </div>
+          );
+        })}
       </div>
     );
   }
