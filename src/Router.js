@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import { connect } from "react-redux"
 
 import { LoginPage } from "./components/login/loginPage";
@@ -23,8 +23,18 @@ const Router = (props) => (
   < React.Fragment >
     <Header isAuthorized={props.authentication.loggedIn}></Header>
     < Switch >
-      <Route exact path="/" component={LoginPage} />
-      <Route exact path="/loginPage" component={LoginPage} />
+      {/* <Route exact path="/" component={LoginPage} />
+      <Route exact path="/loginPage" component={LoginPage} /> */}
+      <Route exact path="/" render={() => (
+        props.authentication.loggedIn && (
+          <Redirect to="/managerDashboard" />
+        )
+      )} />
+      <Route exact path="/loginPage" render={() => (
+        props.authentication.loggedIn && (
+          <Redirect to="/managerDashboard" />
+        )
+      )} />
       <PrivateRoute exact path="/managerDashboard" component={ManagerDashboard} />
       <PrivateRoute exact path="/dashbardDescription" component={DashbardDescription} />
       <PrivateRoute exact path="/addRack" component={AddRack} />
