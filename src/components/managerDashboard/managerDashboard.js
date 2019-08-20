@@ -44,7 +44,7 @@ class ManagerDashboard extends Component {
 
   render() {
     const { _rackData } = this.state;
-    console.log("Rack Data :::::::: ", _rackData)
+
     return (
       <React.Fragment>
         <div>
