@@ -47,68 +47,68 @@ class ManagerDashboard extends Component {
 
     return (
       <React.Fragment>
-        <div>
-          <div className="manager-dashboard">
-            {_rackData.length === 0 ? <Spinner /> : _rackData.map((data, index) => {
-              return (
-                <div
-                  className={classnames("media-wrapper", {
-                    active: this.state.selectedIndex === index
-                  })}
-                  key={index}
+
+        <div className="manager-dashboard">
+          {_rackData.length === 0 ? <Spinner /> : _rackData.map((data, index) => {
+            return (
+              <div
+                className={classnames("media-wrapper", {
+                  active: this.state.selectedIndex === index
+                })}
+                key={index}
+              >
+                <Flippy
+                  flipOnHover={false}
+                  flipOnClick={true}
+                  flipDirection="horizontal"
+                  ref={r => (this.flippy = r)}
                 >
-                  <Flippy
-                    flipOnHover={false}
-                    flipOnClick={true}
-                    flipDirection="horizontal"
-                    ref={r => (this.flippy = r)}
-                  >
-                    <FrontSide>
-                      <div className="media rack-content">
-                        <img
-                          src={rackImage}
-                          className="mr-3 thumb-img"
-                          alt="..."
-                        />
-                        <div className="media-body">
-                          <div className="content-center">
-                            <strong>{data.name}</strong>
-                            <p>{data.locationName}</p>
-                            <p
-                              className={classnames({
-                                green: data.currentMode === "INVENTORY"
-                              })}
-                            >
-                              {data.currentMode}
-                            </p>
-                            {/* <Link to="/dashbardDescription">
+                  <FrontSide>
+                    <div className="media rack-content">
+                      <img
+                        src={rackImage}
+                        className="mr-3 thumb-img"
+                        alt="..."
+                      />
+                      <div className="media-body">
+                        <div className="content-center">
+                          <strong>{data.name}</strong>
+                          <p>{data.locationName}</p>
+                          <p
+                            className={classnames({
+                              green: data.currentMode === "INVENTORY"
+                            })}
+                          >
+                            {data.currentMode}
+                          </p>
+                          {/* <Link to="/dashbardDescription">
                               <i className="fa fa-caret-right icon-pos" />
                             </Link> */}
-                          </div>
                         </div>
                       </div>
-                    </FrontSide>
-                    <BackSide>
-                      <div className="backside-dashboard">
-                        <div className="backside-dashboard1">
-                          <strong>{data.rackStatuses[0]}</strong>
-                          <p>{data.shortDescription}</p>
-                          <p>{data.longDescription}</p>
-                        </div>
+                    </div>
+                  </FrontSide>
+                  <BackSide>
+                    <div className="backside-dashboard">
+                      <div className="backside-dashboard1">
+                        <strong>{data.rackStatuses[0]}</strong>
+                        <p>{data.shortDescription}</p>
+                        <p>{data.longDescription}</p>
                       </div>
-                    </BackSide>
-                  </Flippy>
+                    </div>
+                  </BackSide>
+                </Flippy>
 
-                  <div className="dashboard-link">
-                    <Link to="/dashbardDescription">
-                      <i className="fa fa-caret-right icon-pos" />
-                    </Link>
-                  </div>
+                <div className="dashboard-link">
+                  <Link to="/dashbardDescription">
+                    <i className="fa fa-caret-right icon-pos" />
+                  </Link>
                 </div>
-              )
-            })}
-          </div>
+              </div>
+            )
+          })}
         </div>
+
       </React.Fragment>
     );
   }

@@ -11,6 +11,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     history.listen((location, action) => {
+      console.log("Location Changed............")
       this.props.clearAlerts();
     });
   }
@@ -22,7 +23,7 @@ class App extends Component {
       <React.Fragment>
         {
           alert.message &&
-          <div className={`alert ${alert.type}`}>{alert.message}</div>
+          <div className={`alert notification ${alert.type}`}>{alert.message}</div>
         }
         <Router history={history}>
           <Route />

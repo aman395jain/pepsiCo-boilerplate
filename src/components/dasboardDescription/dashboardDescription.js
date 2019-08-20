@@ -36,7 +36,6 @@ export default class DashboardDescription extends Component {
     _rackDetails2: [laysLogo, doritos, cheetos, redLays, kettleLays]
   }
 
-
   componentDidMount() {
     rackDataService.getRackById(1).then(result => {
       result.data && this.processData(result.data.pusherShelfLists);
