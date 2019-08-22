@@ -8,6 +8,7 @@ import redLays from "../../assets/images/image/redLays.png";
 import kettleLays from "../../assets/images/image/kettleLays.png";
 import { rackDataService } from "../../services/rackData.service";
 import Spinner from "../../shared/spinner/spinner"
+import { history } from "../../helpers/history";
 
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -77,8 +78,11 @@ export default class DashboardDescription extends Component {
 
     return (
       <React.Fragment>
+
         {_rackDetails.length === 0 ? <Spinner /> :
           <div className="scrollmenu">
+            <div style={{ margin: "5px 0px 6px 5px" }}><button type="button" className="btn btn-dark btn-sm" onClick={history.goBack}>Go Back</button></div>
+
             {_rackDetails && _rackDetails.map((item, index) => (
               <div className="box-shadow" key={index}>
                 <Carousel

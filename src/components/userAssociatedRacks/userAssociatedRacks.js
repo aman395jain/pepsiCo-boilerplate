@@ -7,6 +7,7 @@ import rackImage from "../../assets/images/vending.jpg";
 import Header from "../../shared/header/header"
 import Footer from "../../shared/footer/footer";
 import { rackDataService } from "../../services/rackData.service";
+import Circle from "../../shared/circle/circle"
 
 class UserAssociatedRacks extends Component {
     state = {
@@ -48,8 +49,8 @@ class UserAssociatedRacks extends Component {
                                                 <p>{data.locationName}</p>
                                                 <p className={classnames({ 'green': data.currentMode === "INVENTORY" })}>{data.currentMode}</p>
                                             </Link>
+                                            <Circle className="btn-danger"></Circle>
 
-                                            <span class="btn btn-danger circle icon-pos" style={{ right: "20px", zIndex: -2000 }}></span>
                                             {/* <i className="fa fa-angle-down icon-pos" data-toggle="collapse" id={`#collapseId${index}`} href={`#collapseId${index}`} onClick={() => this.changeIcon(index)}></i> */}
                                         </div>
                                     </div>

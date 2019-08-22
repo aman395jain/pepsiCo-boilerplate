@@ -9,13 +9,10 @@ import * as serviceWorker from "./serviceWorker";
 
 import { App } from "./App";
 import store from "./helpers/store";
-import { history } from "./helpers/history";
 
 const app = (
   <Provider store={store}>
-
     <App />
-
   </Provider>
 );
 ReactDOM.render(app, document.getElementById("root"));
